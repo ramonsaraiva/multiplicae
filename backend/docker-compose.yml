@@ -1,0 +1,62 @@
+version: '3.7'
+
+services:
+
+  web:
+    init: true
+    build:
+      context: .
+    command: django
+    environment:
+      - CONTAINER_ENVIRONMENT=local
+      - DATABASE_URL=postgres://megahack:megahack@db:5432/megahack
+      - REDIS_URL=redis://redis:6379/1
+      - RABBITMQ_URL=amqp://guest:guest@rabbit:5672
+    depends_on:
+      - db
+      - rabbit
+      - redis
+    volumes:
+      - .:/var/www/app
+      - ./rootfs/entrypoint.sh:/entrypoint.sh
+    ports:
+      - "8000:8000"
+
+  db:
+    image: mdillon/postgis:11-alpine
+    volumes:
+      - pgdata:/var/lib/postgresql/data 
+    environment:
+      - POSTGRES_USER=megahack
+      - POSTGRES_PASSWORD=megahack
+      - POSTGRES_DB=megahack
+
+  redis:
+    image: redis:5.0.6-alpine3.10
+
+  rabbit:
+    image: rabbitmq:3.8.2-alpine
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+
+  dramatiq:
+    init: true
+    build:
+      context: .
+    command: dramatiq
+    environment:
+      - CONTAINER_ENVIRONMENT=local
+      - DATABASE_URL=postgres://megahack:megahack@db:5432/megahack
+      - REDIS_URL=redis://redis:6379/1
+      - RABBITMQ_URL=amqp://guest:guest@rabbit:5672
+    depends_on:
+      - db
+      - rabbit
+      - redis
+    volumes:
+      - .:/var/www/app
+      - ./rootfs/entrypoint.sh:/entrypoint.sh
+
+volumes:
+  pgdata:
