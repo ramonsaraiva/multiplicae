@@ -23,9 +23,8 @@ jobs:
       env:
         cache-name: cache-requirements
       with:
-        working-directory: ${{ env.working-directory }}
         path: ~/.requirements
-        key: ${{ runner.os }}-ci-${{ env.cache-name }}-${{ hashFiles('requirements.txt') }}
+        key: ${{ runner.os }}-ci-${{ env.cache-name }}-${{ hashFiles('backend/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-ci-${{ env.cache-name }}
 
