@@ -1,4 +1,3 @@
-from django.conf import settings
 from django.contrib.auth.models import (
     AbstractUser,
     BaseUserManager,
@@ -38,4 +37,3 @@ class User(AbstractUser):
 
     def __str_s_(self):
         return self.email
-

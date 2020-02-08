@@ -144,19 +144,19 @@ JWT_AUTH = {
 }
 
 DRAMATIQ_BROKER = {
-    "BROKER": "dramatiq.brokers.rabbitmq.RabbitmqBroker",
-    "OPTIONS": {
-        "url": env.str('RABBITMQ_URL', ''),
+    'BROKER': 'dramatiq.brokers.rabbitmq.RabbitmqBroker',
+    'OPTIONS': {
+        'url': env.str('RABBITMQ_URL', ''),
     },
-    "MIDDLEWARE": [
-        "dramatiq.middleware.Prometheus",
-        "dramatiq.middleware.AgeLimit",
-        "dramatiq.middleware.TimeLimit",
-        "dramatiq.middleware.Callbacks",
-        "dramatiq.middleware.Retries",
-        "django_dramatiq.middleware.AdminMiddleware",
-        "django_dramatiq.middleware.DbConnectionsMiddleware",
+    'MIDDLEWARE': [
+        'dramatiq.middleware.Prometheus',
+        'dramatiq.middleware.AgeLimit',
+        'dramatiq.middleware.TimeLimit',
+        'dramatiq.middleware.Callbacks',
+        'dramatiq.middleware.Retries',
+        'django_dramatiq.middleware.AdminMiddleware',
+        'django_dramatiq.middleware.DbConnectionsMiddleware',
     ]
 }
 
-DRAMATIQ_TASKS_DATABASE = "default"
+DRAMATIQ_TASKS_DATABASE = 'default'
