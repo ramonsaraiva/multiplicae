@@ -45,4 +45,5 @@ jobs:
         SECRET_KEY: 'ci'
         ALLOWED_HOSTS: '*'
         DEBUG: 'True'
+        DATABASE_URL: 'sqlite:////tmp/ci.db'
         DEFAULT_CACHE_BACKEND: 'dummy'
