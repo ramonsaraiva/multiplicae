@@ -13,3 +13,4 @@ django_dramatiq==0.9.1
 dramatiq[rabbitmq, watch]==1.8.1
 requests==2.22.0
 furl==2.1.0
+flake8==3.7.9
