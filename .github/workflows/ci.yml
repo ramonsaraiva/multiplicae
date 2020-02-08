@@ -18,21 +18,32 @@ jobs:
       run: |
         sudo apt-get -yqq install libpq-dev
 
+    - name: Cache application dependencies
+      uses: actions/cache@v1
+      working-directory: ${{ env.working-directory }}
+      env:
+        cache-name: cache-requirements
+      with:
+        path: ~/.requirements
+        key: ${{ runner.os }}-ci-${{ env.cache-name }}-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-ci-${{ env.cache-name }}
+
     - name: Install application dependencies
-      working-directory: ${{env.working-directory}}
+      working-directory: ${{ env.working-directory }}
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Lint
-      working-directory: ${{env.working-directory}}
+      working-directory: ${{ env.working-directory }}
       run: flake8 --exclude migrations config app
 
     - name: Test
-      working-directory: ${{env.working-directory}}
+      working-directory: ${{ env.working-directory }}
       run: python manage.py test
       env:
-        SECRET_KEY:ci
-        ALLOWED_HOSTS:*
-        DEBUG:True
-        DEFAULT_CACHE_BACKEND:dummy
+        SECRET_KEY: ci
+        ALLOWED_HOSTS: *
+        DEBUG: True
+        DEFAULT_CACHE_BACKEND: dummy
