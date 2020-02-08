@@ -31,3 +31,8 @@ jobs:
     - name: Test
       working-directory: ${{env.working-directory}}
       run: python manage.py test
+      env:
+        SECRET_KEY=ci
+        ALLOWED_HOSTS=*
+        DEBUG=True
+        DEFAULT_CACHE_BACKEND=dummy
