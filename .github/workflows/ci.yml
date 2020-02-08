@@ -20,13 +20,11 @@ jobs:
 
     - name: Cache application dependencies
       uses: actions/cache@v1
-      env:
-        cache-name: cache-requirements
       with:
         path: ~/.requirements
-        key: ${{ runner.os }}-ci-${{ env.cache-name }}-${{ hashFiles('backend/requirements.txt') }}
+        key: ${{ runner.os }}-requirements-${{ hashFiles('backend/requirements.txt') }}
         restore-keys: |
-          ${{ runner.os }}-ci-${{ env.cache-name }}
+          ${{ runner.os }}-requirements-
 
     - name: Install application dependencies
       working-directory: ${{ env.working-directory }}
