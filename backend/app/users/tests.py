@@ -13,13 +13,14 @@ class UserSerializerTest(TestCase):
 
     def setUp(self):
         self.serializer = UserSerializer()
-        self.user = User.objects.create(username='root')
+        self.user = User.objects.create(email='root@root.com')
 
     def test_get_token(self):
         token = self.serializer.get_token(self.user)
         decoded = jwt_decode_handler(token)
-        self.assertEqual(decoded['username'], 'root')
+        self.assertEqual(decoded['email'], 'root@root.com')
 
     def test_create(self):
-        user = self.serializer.create({'username': 'jon', 'password': 'doe'})
-        self.assertEqual(user.username, 'jon')
+        user = self.serializer.create(
+            {'email': 'root2@root.com', 'password': 'bananas'})
+        self.assertEqual(user.email, 'root2@root.com')

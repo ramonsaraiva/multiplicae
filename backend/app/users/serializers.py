@@ -16,7 +16,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'password', 'token')
+        fields = ('email', 'password', 'token')
         read_only_fields = ('token', )
         extra_kwargs = {'password': {'write_only': True}}
 
@@ -32,7 +32,7 @@ class UserSerializer(serializers.ModelSerializer):
         Creates an user instance manually calling `set_password` so the
         password is actually encrypted before inserted into the database.
         """
-        user = User(username=validated_data['username'])
+        user = User(email=validated_data['email'])
         user.set_password(validated_data['password'])
         user.save()
         return user

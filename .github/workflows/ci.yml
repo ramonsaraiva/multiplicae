@@ -40,7 +40,7 @@ jobs:
 
     - name: Test
       working-directory: ${{ env.working-directory }}
-      run: python manage.py test
+      run: python manage.py test app
       env:
         SECRET_KEY: 'ci'
         ALLOWED_HOSTS: '*'
