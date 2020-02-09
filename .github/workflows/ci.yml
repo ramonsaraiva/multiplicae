@@ -28,7 +28,6 @@ jobs:
           ${{ runner.os }}-pip-
 
     - name: Install application dependencies
-      if: steps.cache-pip.outputs.cache-hit != 'true'
       working-directory: ${{ env.working-directory }}
       run: |
         python -m pip install --upgrade pip
