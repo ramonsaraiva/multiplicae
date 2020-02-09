@@ -15,8 +15,11 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         script: |
-          cd megahack
+          npm --version
+          cd /home/megahack/megahack
           git pull
-          cd backend
+          cd /home/megahack/megahack/backend
           docker-compose build
           docker-compose restart dramatiq web
+          cd /home/megahack/megahack/frontend
+          npm run build
