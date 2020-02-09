@@ -20,13 +20,15 @@ jobs:
 
     - name: Cache application dependencies
       uses: actions/cache@v1
+      id: cache-pip
       with:
-        path: ~/.requirements
-        key: ${{ runner.os }}-requirements-${{ hashFiles('backend/requirements.txt') }}
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
-          ${{ runner.os }}-requirements-
+          ${{ runner.os }}-pip-
 
     - name: Install application dependencies
+      if: steps.cache-pip.outputs.cache-hit != 'true'
       working-directory: ${{ env.working-directory }}
       run: |
         python -m pip install --upgrade pip
