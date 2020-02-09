@@ -18,4 +18,5 @@ jobs:
           cd megahack
           git pull
           cd backend
-          docker-compose restart
+          docker-compose restart dramatiq
+          docker-compose restart web
