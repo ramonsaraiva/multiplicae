@@ -15,6 +15,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         script: |
+          npm --version
           cd /home/megahack/megahack
           git pull
           cd /home/megahack/megahack/backend
