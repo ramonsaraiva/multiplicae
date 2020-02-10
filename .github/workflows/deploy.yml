@@ -15,6 +15,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         script: |
+          source .bash_profile
           npm --version
           cd /home/megahack/megahack
           git pull
@@ -22,4 +23,5 @@ jobs:
           docker-compose build
           docker-compose restart dramatiq web
           cd /home/megahack/megahack/frontend
+          npm install
           npm run build
