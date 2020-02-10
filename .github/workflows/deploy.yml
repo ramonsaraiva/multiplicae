@@ -16,7 +16,6 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         script: |
           source .bash_profile
-          npm --version
           cd /home/megahack/megahack
           git pull
           cd /home/megahack/megahack/backend
@@ -25,3 +24,4 @@ jobs:
           cd /home/megahack/megahack/frontend
           npm install
           npm run build
+          echo ${{ secrets.password }} | sudo npm run postbuild
