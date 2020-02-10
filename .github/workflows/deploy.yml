@@ -24,4 +24,4 @@ jobs:
           cd /home/megahack/megahack/frontend
           npm install
           npm run build
-          echo ${{ secrets.password }} | sudo npm run postbuild
+          sudo npm run postbuild
