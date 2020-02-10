@@ -24,4 +24,4 @@ jobs:
           cd /home/megahack/megahack/frontend
           npm install
           npm run build
-          sudo npm run postbuild
+          npm run deploy
