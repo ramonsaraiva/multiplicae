@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Main, Content } from './styles';
 
-function MainHome({ children }) {
+function MainOpen({ children }) {
   return (
     <Main>
       <Content>{children}</Content>
@@ -10,4 +10,4 @@ function MainHome({ children }) {
   );
 }
 
-export default MainHome;
+export default MainOpen;
