@@ -1,9 +1,9 @@
 import React from 'react';
 
-import BaseTitle from '../../components/BaseTitle';
+import TitleHack from '../../components/TitleHack';
 
 function Login() {
-  return <BaseTitle>Vai Brasil!!!</BaseTitle>;
+  return <TitleHack>Login</TitleHack>;
 }
 
 export default Login;
