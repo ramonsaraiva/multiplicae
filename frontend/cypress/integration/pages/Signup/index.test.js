@@ -3,7 +3,7 @@ describe('Page Signup', function() {
     cy.visit('/auth/signup');
   });
 
-  it('Verify the compoenents: TitleHack, three LabelHack, tree InputHack, CheckHack and ButtonHack', function() {
+  it('Verify the components: TitleHack, three LabelHack, four InputHack and ButtonHack', function() {
     cy.visit('/auth/signup');
     cy.get('h1').contains('Cadastro');
 
@@ -31,9 +31,17 @@ describe('Page Signup', function() {
     cy.get('label')
       .contains('Li e aceito os termos de uso')
       .should('have.attr', 'for', 'contract');
+  });
+
+  it('Click in LabelHack and the InputHack have is checked', function() {
+    cy.visit('/auth/signup');
 
     cy.contains('Li e aceito os termos de uso').click();
     cy.get('input[type=checkbox]:checked');
+  });
+
+  it('Click in ButtonHack and verify if open page Login', function() {
+    cy.visit('/auth/signup');
 
     cy.contains('Enviar').click();
     cy.contains('Sua jornada de investimentos');
