@@ -17,9 +17,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cypress run",
     "eject": "react-scripts eject",
-    "cy:open": "cypress open"
+    "test": "cypress run",
+    "cy:open": "cypress open",
+    "deploy": "./deploy.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
