@@ -33,12 +33,14 @@ DJANGO_APPS = [
 INTERNAL_APPS = [
     'app.misc',
     'app.users',
+    'app.trails',
 ]
 
 EXTERNAL_APPS = [
     'rest_framework',
     'drf_yasg',
     'django_dramatiq',
+    'mptt',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + INTERNAL_APPS + EXTERNAL_APPS
