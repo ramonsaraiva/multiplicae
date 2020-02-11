@@ -19,8 +19,7 @@ jobs:
           cd /home/megahack/megahack
           git pull
           cd /home/megahack/megahack/backend
-          docker-compose build
-          docker-compose restart dramatiq web
+          docker-compose up --build
           cd /home/megahack/megahack/frontend
           npm install
           npm run build
