@@ -4,6 +4,7 @@ services:
 
   web:
     init: true
+    container_name: multiplicae-web
     build:
       context: .
     command: django
@@ -23,6 +24,7 @@ services:
       - "8000:8000"
 
   db:
+    container_name: multiplicae-db
     image: mdillon/postgis:11-alpine
     volumes:
       - pgdata:/var/lib/postgresql/data 
@@ -32,15 +34,18 @@ services:
       - POSTGRES_DB=megahack
 
   redis:
+    container_name: multiplicae-redis
     image: redis:5.0.6-alpine3.10
 
   rabbit:
+    container_name: multiplicae-rabbitmq
     image: rabbitmq:3.8.2-alpine
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
 
   dramatiq:
+    container_name: multiplicae-dramatiq
     init: true
     build:
       context: .
