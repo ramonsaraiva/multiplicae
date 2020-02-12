@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import UserNodeProgress
+
+
+@admin.register(UserNodeProgress)
+class UserNodeProgressAdmin(admin.ModelAdmin):
+    pass
