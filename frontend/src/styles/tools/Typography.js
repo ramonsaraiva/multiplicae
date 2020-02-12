@@ -6,8 +6,8 @@ const weight = {
 };
 
 export const _h1 = css`
-  font-size: 27px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 23px;
   font-weight: ${weight.bold};
 `;
 
