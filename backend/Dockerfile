@@ -25,3 +25,9 @@ EXPOSE 8000
 
 ENTRYPOINT ["/entrypoint.sh"]
 
+HEALTHCHECK \
+    --start-period=15s \
+    --timeout=2s \
+    --retries=3 \
+    --interval=5s \
+    CMD /healthcheck.sh
