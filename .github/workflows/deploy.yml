@@ -19,8 +19,9 @@ jobs:
           cd /home/megahack/multiplicae
           git pull
           cd /home/megahack/multiplicae/backend
-          docker-compose up --build --detach
+          docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build --no-deps --d
           cd /home/megahack/multiplicae/frontend
           npm install
           npm run build
           npm run deploy
+

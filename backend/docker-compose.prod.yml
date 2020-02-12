@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+
+  web:
+    environment:
+      - CONTAINER_ENVIRONMENT=production
+    restart: always
+
+  dramatiq:
+    environment:
+      - CONTAINER_ENVIRONMENT=production
+    restart: always
+
+  db:
+    restart: always
+
+  redis:
+    restart: always
+
+  rabbit:
+    restart: always
+
+  dramatiq:
+    restart: always
