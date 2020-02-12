@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MainOpen from '../../containers/MainOpen';
-import FormLogin from '../../containers/FormSignup';
+import FormAuth from '../../containers/FormAuth';
 import TitleHack from '../../components/TitleHack';
 import LabelHack from '../../components/LabelHack';
 import InputHack from '../../components/InputHack';
@@ -10,7 +10,7 @@ import ButtonHack from '../../components/ButtonHack';
 function Signup() {
   return (
     <MainOpen>
-      <FormLogin>
+      <FormAuth>
         <TitleHack>Cadastro</TitleHack>
 
         <LabelHack for="name">Nome:</LabelHack>
@@ -28,7 +28,7 @@ function Signup() {
         </LabelHack>
 
         <ButtonHack to="/tree">Enviar</ButtonHack>
-      </FormLogin>
+      </FormAuth>
     </MainOpen>
   );
 }

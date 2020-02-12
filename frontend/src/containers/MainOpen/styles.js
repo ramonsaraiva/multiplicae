@@ -5,6 +5,7 @@ import { Button } from '../../components/ButtonHack/styles';
 
 export const Content = styled.div`
   text-align: center;
+  width: 100%;
 
   & > ${Title} {
     margin-bottom: var(--gap-bigger);

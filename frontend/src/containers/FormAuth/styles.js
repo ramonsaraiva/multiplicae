@@ -5,9 +5,13 @@ import { Input } from '../../components/InputHack/styles';
 import { Button } from '../../components/ButtonHack/styles';
 
 export const Form = styled.form`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
+  padding-left: var(--gap-medium);
+  padding-right: var(--gap-medium);
 
   & > ${Title} {
     align-self: center;
