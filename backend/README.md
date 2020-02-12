@@ -1,4 +1,4 @@
-# Megahack backend
+# multiplicae backend
 
 ## Instructions
 

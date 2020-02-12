@@ -20,9 +20,9 @@ from .routers import v1_urls
 
 schema_view = get_schema_view(
     openapi.Info(
-        title='Megahack',
+        title='Multiplicae',
         default_version='v1',
-        description='Megahack',
+        description='Multiplicae',
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
