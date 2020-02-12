@@ -16,11 +16,11 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         script: |
           source .bash_profile
-          cd /home/megahack/megahack
+          cd /home/megahack/multiplicae
           git pull
-          cd /home/megahack/megahack/backend
+          cd /home/megahack/multiplicae/backend
           docker-compose up --build
-          cd /home/megahack/megahack/frontend
+          cd /home/megahack/multiplicae/frontend
           npm install
           npm run build
           npm run deploy
