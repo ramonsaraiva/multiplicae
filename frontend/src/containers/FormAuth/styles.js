@@ -10,8 +10,8 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  padding-left: var(--gap-medium);
-  padding-right: var(--gap-medium);
+  padding-left: var(--gap-big);
+  padding-right: var(--gap-big);
 
   & > ${Title} {
     align-self: center;
@@ -19,7 +19,7 @@ export const Form = styled.form`
   }
 
   & > ${Input} {
-    margin-bottom: var(--gap-medium);
+    margin-bottom: var(--gap-big);
     width: 100%;
     height: 40px;
   }

@@ -13,6 +13,8 @@ const Colors = createGlobalStyle`
     --color-complementary-vine: #8F2D56;
     --color-complementary-red: #CF002F;
     --color-complementary-yellow: #FEBC42;
+
+    --color-border: rgba(15, 76, 129, 0.3);
   }
 `;
 

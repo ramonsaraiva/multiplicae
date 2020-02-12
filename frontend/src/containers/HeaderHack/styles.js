@@ -6,7 +6,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--gap-small) var(--gap-medium);
+  padding: var(--gap-small) var(--gap-big);
 
   & > ${Logo} {
     line-height: 1em;

@@ -17,7 +17,7 @@ export const Content = styled.div`
     justify-content: center;
     width: 80%;
     height: 50px;
-    margin-bottom: var(--gap-medium);
+    margin-bottom: var(--gap-big);
   }
 `;
 
