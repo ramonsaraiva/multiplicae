@@ -42,6 +42,7 @@ EXTERNAL_APPS = [
     'drf_yasg',
     'django_dramatiq',
     'mptt',
+    'debug_toolbar',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + INTERNAL_APPS + EXTERNAL_APPS
@@ -69,6 +70,7 @@ CACHES = {
 CACHES['default'] = CACHES[env.str('DEFAULT_CACHE_BACKEND', 'dummy')]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -164,3 +166,8 @@ DRAMATIQ_BROKER = {
 }
 
 DRAMATIQ_TASKS_DATABASE = 'default'
+
+
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': lambda request: DEBUG,
+}
