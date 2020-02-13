@@ -3,8 +3,9 @@ from mptt.admin import DraggableMPTTAdmin
 from django.contrib import admin
 
 from .models import (
-    Trail,
     Node,
+    NodeContent,
+    Trail,
 )
 
 
@@ -16,3 +17,8 @@ class TrailAdmin(admin.ModelAdmin):
 @admin.register(Node)
 class NodeAdmin(DraggableMPTTAdmin):
     mptt_ident_field = 'name'
+
+
+@admin.register(NodeContent)
+class NodeContentAdmin(admin.ModelAdmin):
+    pass
