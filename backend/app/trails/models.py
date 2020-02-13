@@ -54,13 +54,14 @@ class Node(MPTTModel):
         related_name='children',
     )
     name = models.CharField(max_length=64)
+    abbreviation = models.CharField(max_length=16)
     is_abstract = models.BooleanField(default=False)
     is_path = models.BooleanField(default=False)
 
     objects = NodeQuerySet.as_manager()
 
     def __str__(self) -> str:
-        return self.name
+        return f'{self.name} - {self.abbreviation}'
 
     def progress_for(self, user):
         try:
