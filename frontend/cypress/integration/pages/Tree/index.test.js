@@ -20,4 +20,11 @@ describe('Page Tree', function() {
 
     cy.get('article').contains('Monte a sua jornada');
   });
+
+  it('TreeHack with the components: TitleHack, StartTree and two NodeTree', function() {
+    cy.visit('/tree');
+
+    cy.get('h1').contains('Índices');
+    cy.get('span').get('img[src*=play]');
+  });
 });

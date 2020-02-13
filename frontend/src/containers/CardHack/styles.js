@@ -36,6 +36,7 @@ export const Card = styled.article`
 
   & > ${Title} {
     margin-bottom: var(--gap-smaller);
+    color: var(--color-primary-blue);
   }
 
   & > ${Text} {

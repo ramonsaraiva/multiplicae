@@ -7,6 +7,7 @@ import TitleHack from '../../components/TitleHack';
 import LogoHack from '../../components/LogoHack';
 import IconMenu from '../../components/MenuHack';
 import TextHack from '../../components/TextHack';
+import StartTree from '../../components/StartTree';
 
 function Tree() {
   return (
@@ -27,6 +28,9 @@ function Tree() {
           </TextHack>
         </CardHack>
       </ContentHeader>
+
+      <TitleHack>Índices</TitleHack>
+      <StartTree />
     </>
   );
 }
