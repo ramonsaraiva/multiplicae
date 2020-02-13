@@ -14,16 +14,24 @@ class RecursiveField(serializers.Serializer):
 
 
 class NodeSerializer(serializers.ModelSerializer):
+    progress = serializers.SerializerMethodField()
     children = RecursiveField(many=True, required=False)
 
     class Meta:
         model = Node
-        fields = ('id', 'name', 'children')
+        fields = ('id', 'name', 'progress', 'children')
+
+    def get_progress(self, obj):
+        return obj.progress_for(self.context.get('request').user)
 
 
 class TrailSerializer(serializers.ModelSerializer):
-    root = NodeSerializer()
+    root = serializers.SerializerMethodField()
 
     class Meta:
         model = Trail
         fields = ('id', 'name', 'root')
+
+    def get_root(self, obj):
+        serializer_context = {'request': self.context.get('request')}
+        return NodeSerializer(obj.root, context=serializer_context).data
