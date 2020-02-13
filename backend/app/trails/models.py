@@ -61,7 +61,7 @@ class Node(MPTTModel):
     objects = NodeQuerySet.as_manager()
 
     def __str__(self) -> str:
-        return self.name
+        return f'{self.name} - {self.abbreviation}'
 
     def progress_for(self, user):
         try:
