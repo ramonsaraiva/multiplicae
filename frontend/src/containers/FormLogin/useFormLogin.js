@@ -10,8 +10,6 @@ function useFormLogin(callback) {
   function handleChange({ target }) {
     const { name, value } = target;
 
-    console.log(name, value);
-
     setValue(oldValue => ({ ...oldValue, [name]: value }));
   }
 
