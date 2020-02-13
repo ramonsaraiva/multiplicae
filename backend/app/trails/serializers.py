@@ -22,7 +22,7 @@ class ContentHyperlinkedRelatedField(serializers.HyperlinkedRelatedField):
     def get_url(self, obj, view_name, request, format):
         url_kwargs = {
             'slug': 'default',
-            'node_id': obj.id,
+            'node_id': obj.node_id,
         }
         return reverse(
             view_name, kwargs=url_kwargs, request=request, format=format)
