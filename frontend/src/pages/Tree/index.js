@@ -32,7 +32,7 @@ function Tree() {
 
       <TitleHack>Índices</TitleHack>
       <StartTree progress={80}/>
-      <NodeTree  />
+      <NodeTree active />
     </>
   );
 }
