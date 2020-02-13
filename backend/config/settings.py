@@ -35,6 +35,7 @@ INTERNAL_APPS = [
     'app.users',
     'app.trails',
     'app.analytics',
+    'app.investments',
 ]
 
 EXTERNAL_APPS = [
