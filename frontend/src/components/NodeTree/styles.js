@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const Content = styled.svg`
+  width:108px;
+  height:108px;
+  border-radius: 50%;
+
   & > circle{
-    cx:60px;
-    cy:60px;
+    cx:54px;
+    cy:54px;
   }
 `
 export const Border = styled.circle`

@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const Content = styled.svg`
+  width:108px;
+  height:108px;
+  border-radius: 50%;
+
   & > circle{
-    cx:60px;
-    cy:60px;
+    cx:54px;
+    cy:54px;
   }
 `
 export const Border = styled.circle`
@@ -18,7 +22,7 @@ export const Progress = styled.circle`
   fill:none;
   stroke:var(--color-complementary-blue-light);
   stroke-dasharray: calc(310*(${props=>props.progress}/100)) 310;
-  transform: translateY(120px) rotateZ(270deg);
+  transform: translateY(108px) rotateZ(270deg);
   stroke-linecap:round;
 `
 
