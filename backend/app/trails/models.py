@@ -64,6 +64,8 @@ class Node(MPTTModel):
         return f'{self.name} - {self.abbreviation}'
 
     def progress_for(self, user):
+        if not user.id:
+            return 0
         try:
             return UserNodeProgress.objects.get(node=self, user=user).progress
         except UserNodeProgress.DoesNotExist:
