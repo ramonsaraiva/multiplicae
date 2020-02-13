@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
-export const Ball = styled.svg`
+export const Content = styled.svg`
+  width:108px;
+  height:108px;
+  border-radius: 50%;
+
   & > circle{
-    cx:60px;
-    cy:60px;
+    cx:54px;
+    cy:54px;
   }
 `
 export const Border = styled.circle`
@@ -19,26 +23,8 @@ export const Center = styled.circle`
     fill:none;
     stroke:var(--color-secondary);
 `
-export const Locked = styled.path``
-export const Unlocked = styled.path``
-
-export const Node =styled.span`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 8px dotted ${props=>props.active?"var(--color-complementary-blue-light)":"var(--color-secondary)"};
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-`
-
-
-export const Content =styled.span`
-display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--color-secondary);
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
+export const Icon = styled.path`
+  fill-rule:evenodd; 
+  clip-rule: evenodd;
+  fill: ${props=>props.active?"#3B596A":"#D8D7DF"};
 `
