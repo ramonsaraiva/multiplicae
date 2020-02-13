@@ -42,6 +42,7 @@ EXTERNAL_APPS = [
     'drf_yasg',
     'django_dramatiq',
     'mptt',
+    'debug_toolbar',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + INTERNAL_APPS + EXTERNAL_APPS
