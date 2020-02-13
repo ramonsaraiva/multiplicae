@@ -54,6 +54,7 @@ class Node(MPTTModel):
         related_name='children',
     )
     name = models.CharField(max_length=64)
+    abbreviation = models.CharField(max_length=16)
     is_abstract = models.BooleanField(default=False)
     is_path = models.BooleanField(default=False)
 
