@@ -25,6 +25,6 @@ describe('Page Tree', function() {
     cy.visit('/tree');
 
     cy.get('h1').contains('Índices');
-    cy.get('span').get('img[src*=play]');
+    cy.get('span').contains('%');
   });
 });
