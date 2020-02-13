@@ -10,6 +10,7 @@ from .serializers import (
     NodeContentSerializer,
     TrailSerializer,
 )
+from .services import get_node_content
 
 
 class TrailAPIView(generics.RetrieveAPIView):
@@ -27,6 +28,6 @@ class NodeContentAPIView(generics.RetrieveAPIView):
 
     def get_object(self, queryset=None):
         try:
-            return NodeContent.objects.get(node_id=self.kwargs['node_id'])
+            return get_node_content(self.kwargs['node_id'], self.request.user)
         except NodeContent.DoesNotExist:
             raise Http404
