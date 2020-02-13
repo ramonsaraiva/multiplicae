@@ -3,6 +3,7 @@ from mptt.models import (
     TreeForeignKey,
 )
 
+from django.contrib.postgres.fields import JSONField
 from django.db import models
 
 from app.analytics.models import UserNodeProgress
@@ -70,3 +71,13 @@ class Node(MPTTModel):
             return UserNodeProgress.objects.get(node=self, user=user).progress
         except UserNodeProgress.DoesNotExist:
             return 0
+
+
+class NodeContent(models.Model):
+
+    node = models.ForeignKey(Node, on_delete=models.CASCADE)
+    content_type = models.CharField(max_length=32)
+    content = JSONField(default=dict, blank=True)
+
+    def __str__(self) -> str:
+        return f'{self.node} - {self.content_type}'
