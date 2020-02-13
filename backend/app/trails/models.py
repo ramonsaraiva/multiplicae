@@ -32,7 +32,10 @@ class NodeQuerySet(models.QuerySet):
 
     def with_progress_for(self, user):
         return self.annotate(
-            progress=models.F('node_progress__progress'),
+            progress=models.Case(
+                models.When(node_progress__progress__isnull=True, then=0),
+                default=models.F('node_progress__progress'),
+            ),
         ).filter(
             models.Q(node_progress__user=user) |
             models.Q(node_progress__user__isnull=True),
