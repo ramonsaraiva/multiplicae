@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Form } from './styles';
 
-function FormAuth({ children }) {
-  return <Form>{children}</Form>;
+function FormAuth(props) {
+  return <Form {...props} />;
 }
 
 export default FormAuth;

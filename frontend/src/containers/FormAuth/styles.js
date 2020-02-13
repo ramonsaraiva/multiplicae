@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Title } from '../../components/TitleHack/styles';
 import { Input } from '../../components/InputHack/styles';
 import { Button } from '../../components/ButtonHack/styles';
+import { Label } from '../../components/LabelHack/styles';
 
 export const Form = styled.form`
   box-sizing: border-box;
@@ -18,10 +19,16 @@ export const Form = styled.form`
     margin-bottom: var(--gap-big);
   }
 
-  & > ${Input} {
+  & > ${Label} {
     margin-bottom: var(--gap-big);
     width: 100%;
+    text-align: left;
+  }
+
+  & ${Input}:not([type=checkbox]) {
+    display: block;
     height: 40px;
+    width: inherit;
   }
 
   & > ${Button} {

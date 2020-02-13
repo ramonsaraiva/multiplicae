@@ -38,7 +38,6 @@ describe('Page Login', function() {
     cy.visit('/auth/login');
 
     cy.contains('Lembre-me').click();
-    cy.get('input[type=checkbox]:focus');
   });
 
   it('Click in Button and verify if open page Tree', function() {
