@@ -8,10 +8,14 @@ import FieldHack from '../../components/FieldHack';
 import LabelHack from '../../components/LabelHack';
 import InputHack from '../../components/InputHack';
 import ButtonHack from '../../components/ButtonHack';
-import useFormLogin from './useFormLogin';
+import useValidation from '../../libs/validation/useValidation';
 
 function FormLogin() {
-  const { value, handleChange, errors, handleSubmit } = useFormLogin(sendUser);
+  const { value, handleChange, errors, handleSubmit } = useValidation(
+    sendUser,
+    'email',
+    'password'
+  );
 
   const history = useHistory();
 

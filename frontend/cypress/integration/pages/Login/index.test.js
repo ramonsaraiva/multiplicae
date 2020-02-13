@@ -17,7 +17,7 @@ describe('Page Login', function() {
     cy.get('input[type=checkbox]');
     cy.get('label').contains('Lembre-me');
 
-    cy.get('a').contains('Entrar');
+    cy.get('button').contains('Entrar');
   });
 
   it('When to click label that contains Email: the input with the email type has stay focus', function() {
@@ -43,6 +43,8 @@ describe('Page Login', function() {
   it('Click in Button and verify if open page Tree', function() {
     cy.visit('/auth/login');
 
+    cy.get('input[type=email]').type('marco.bruno.br@gmail.com');
+    cy.get('input[type=password]').type('q1w2e3r4');
     cy.contains('Entrar').click();
     cy.contains('Invista nos seus sonhos');
   });

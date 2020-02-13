@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 
-import validation from './validation';
+import validation from '../../containers/FormLogin/validation';
 
-function useFormLogin(callback) {
-  const [value, setValue] = useState({ email: '', passoword: '' });
+function useValidation(callback, ...values) {
+  const [value, setValue] = useState(
+    Object.assign(...values.map(value => ({ [value]: '' })))
+  );
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -34,4 +36,4 @@ function useFormLogin(callback) {
   return { value, handleChange, handleSubmit, errors };
 }
 
-export default useFormLogin;
+export default useValidation;
