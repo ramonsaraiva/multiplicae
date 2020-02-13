@@ -8,6 +8,7 @@ import LogoHack from '../../components/LogoHack';
 import IconMenu from '../../components/MenuHack';
 import TextHack from '../../components/TextHack';
 import StartTree from '../../components/StartTree';
+import NodeTree from '../../components/NodeTree';
 
 function Tree() {
   return (
@@ -30,7 +31,8 @@ function Tree() {
       </ContentHeader>
 
       <TitleHack>Índices</TitleHack>
-      <StartTree />
+      <StartTree progress={0.65}/>
+      <NodeTree active />
     </>
   );
 }

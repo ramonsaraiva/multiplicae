@@ -30,10 +30,10 @@ export const Start = styled.span`
     position: absolute;
     border-radius: inherit;
     border: inherit;
-    border-top-color: var(--color-complementary-blue-light);
-    border-right-color: var(--color-secondary);
-    border-bottom-color: var(--color-secondary);
-    border-left-color: var(--color-secondary);
+    border-top-color: ${props=>props.progress > 0.25?"var(--color-complementary-blue-light)":"var(--color-secondary)"};
+    border-right-color: ${props=>props.progress >= 0.50?"var(--color-complementary-blue-light)":"var(--color-secondary)"};
+    border-bottom-color: ${props=>props.progress >= 0.75?"var(--color-complementary-blue-light)":"var(--color-secondary)"};
+    border-left-color: ${props=>props.progress = 1?"var(--color-complementary-blue-light)":"var(--color-secondary)"};
     width: 100%;
     height: 100%;
     transform: rotate(45deg);

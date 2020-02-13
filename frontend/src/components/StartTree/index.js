@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Start, Content } from './styles';
 
-function StartTree() {
+function StartTree(props) {
   return (
-    <Start>
+    <Start {...props}>
       <Content>%</Content>
     </Start>
   );
