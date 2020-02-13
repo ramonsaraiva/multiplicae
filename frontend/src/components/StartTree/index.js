@@ -1,12 +1,20 @@
 import React from 'react';
 
-import { Start, Content } from './styles';
+import { Start, Content,Ball,Border,Progress,Center } from './styles';
 
 function StartTree(props) {
   return (
-    <Start {...props}>
-      <Content>%</Content>
-    </Start>
+    <>
+      <Ball>
+        <Border />
+        <Progress {...props} />
+        <Center />
+      </Ball>
+
+      <Start {...props}>
+        <Content>%</Content>
+      </Start>
+    </>
   );
 }
 

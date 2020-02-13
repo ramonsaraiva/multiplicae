@@ -31,8 +31,8 @@ function Tree() {
       </ContentHeader>
 
       <TitleHack>Índices</TitleHack>
-      <StartTree progress={0.65}/>
-      <NodeTree active />
+      <StartTree progress={80}/>
+      <NodeTree  />
     </>
   );
 }
