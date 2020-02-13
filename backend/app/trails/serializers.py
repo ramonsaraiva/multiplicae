@@ -19,7 +19,15 @@ class NodeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Node
-        fields = ('id', 'name', 'abbreviation', 'progress', 'children')
+        fields = (
+            'id',
+            'name',
+            'abbreviation',
+            'progress',
+            'is_abstract',
+            'is_path',
+            'children',
+        )
 
     def get_progress(self, obj):
         return obj.progress_for(self.context.get('request').user)
