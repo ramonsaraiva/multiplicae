@@ -9,11 +9,16 @@ case "$1" in
         mkdir -p "${log_dir}"
         ./manage.py migrate
 
-        access_logfile="${log_dir}/django-access.log"
-        error_logfile="${log_dir}/django-error.log"
-
-        access_logfile="-"
-        error_logfile="-"
+        case "$CONTAINER_ENVIRONMENT" in
+            production)
+                access_logfile="${log_dir}/django-access.log"
+                error_logfile="${log_dir}/django-error.log"
+                ;;
+            *)
+                access_logfile="-"
+                error_logfile="-"
+                ;;
+        esac
 
         echo "Logging to: ${log_dir}"
 
