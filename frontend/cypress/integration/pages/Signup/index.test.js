@@ -51,6 +51,10 @@ describe('Page Signup', function() {
   it('Click in ButtonHack and verify if open page Login', function() {
     cy.visit('/auth/signup');
 
+    cy.get('input[name=name]').type('Bigodation');
+    cy.get('input[name=email]').type('marco.bruno.br@gmail.com');
+    cy.get('input[name=password]').type('12345678');
+    cy.get('input[name=termsOfUse]').click();
     cy.contains('Enviar').click();
     cy.contains('Invista nos seus sonhos');
   });

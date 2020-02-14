@@ -4,10 +4,9 @@ import useValidation from '../../libs/validation/useValidation';
 import validation from './validation';
 import FormAuth from '../FormAuth';
 import TitleHack from '../../components/TitleHack';
-import LabelHack from '../../components/LabelHack';
-import InputHack from '../../components/InputHack';
 import ButtonHack from '../../components/ButtonHack';
 import FieldHack from '../../components/FieldHack';
+import { useHistory } from 'react-router-dom';
 
 function FormSignup() {
   const { errors, value, handleSubmit, handleChange } = useValidation(
@@ -19,7 +18,11 @@ function FormSignup() {
     'termsOfUse'
   );
 
-  function newUser() {}
+  const history = useHistory();
+
+  function newUser() {
+    history.push('/tree');
+  }
 
   return (
     <FormAuth noValidate onSubmit={handleSubmit}>
@@ -50,7 +53,7 @@ function FormSignup() {
         onChange={handleChange}
       />
       <FieldHack
-        contentLabel="Leia os termos de uso"
+        contentLabel="Li e aceito os termos de uso"
         name="termsOfUse"
         type="checkbox"
         value={value.termsOfUse}
