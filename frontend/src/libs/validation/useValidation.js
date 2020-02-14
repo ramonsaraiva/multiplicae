@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import validation from '../../containers/FormLogin/validation';
-
-function useValidation(callback, ...values) {
+function useValidation(validation, callback, ...values) {
   const [value, setValue] = useState(
     Object.assign(...values.map(value => ({ [value]: '' })))
   );
@@ -17,6 +15,7 @@ function useValidation(callback, ...values) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    console.log('ae');
 
     setErrors(validation(value));
     setIsSubmitting(true);

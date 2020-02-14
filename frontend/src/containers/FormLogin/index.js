@@ -9,9 +9,11 @@ import LabelHack from '../../components/LabelHack';
 import InputHack from '../../components/InputHack';
 import ButtonHack from '../../components/ButtonHack';
 import useValidation from '../../libs/validation/useValidation';
+import validation from './validation';
 
 function FormLogin() {
   const { value, handleChange, errors, handleSubmit } = useValidation(
+    validation,
     sendUser,
     'email',
     'password'
