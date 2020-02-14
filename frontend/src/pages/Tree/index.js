@@ -4,19 +4,13 @@ import HeaderHack from '../../containers/HeaderHack';
 import ContentHeader from '../../containers/ContentHeader';
 import CardHack from '../../containers/CardHack';
 import TitleHack from '../../components/TitleHack';
-import LogoHack from '../../components/LogoHack';
-import IconMenu from '../../components/MenuHack';
 import TextHack from '../../components/TextHack';
 import TreeArea from '../../components/TreeArea';
 
 function Tree() {
   return (
     <>
-      <HeaderHack>
-        <LogoHack>Logo</LogoHack>
-
-        <IconMenu />
-      </HeaderHack>
+      <HeaderHack />
 
       <ContentHeader>
         <CardHack contentAction="Monte a sua jornada">
@@ -30,7 +24,7 @@ function Tree() {
       </ContentHeader>
 
       <TitleHack>Índices</TitleHack>
-      <TreeArea/>
+      <TreeArea />
     </>
   );
 }

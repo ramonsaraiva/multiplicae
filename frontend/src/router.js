@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Tree from './pages/Tree';
+import DetailsStartTree from './pages/DetailsStartTree';
 
 const Router = () => (
   <Routes>
@@ -13,6 +14,7 @@ const Router = () => (
       <Route path="/auth/signup" component={Signup} />
       <Route path="/auth/login" component={Login} />
       <Route path="/tree" component={Tree} />
+      <Route path="/details/start-tree" component={DetailsStartTree} />
     </Switch>
   </Routes>
 );
