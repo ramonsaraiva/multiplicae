@@ -15,7 +15,8 @@ function FormSignup() {
     newUser,
     'name',
     'email',
-    'password'
+    'password',
+    'termsOfUse'
   );
 
   function newUser() {}
@@ -48,10 +49,14 @@ function FormSignup() {
         msgError={errors.password}
         onChange={handleChange}
       />
-
-      <LabelHack>
-        <InputHack type="checkbox" /> Li e aceito os termos de uso
-      </LabelHack>
+      <FieldHack
+        contentLabel="Leia os termos de uso"
+        name="termsOfUse"
+        type="checkbox"
+        value={value.termsOfUse}
+        msgError={errors.termsOfUse}
+        onChange={handleChange}
+      />
 
       <ButtonHack as="button">Enviar</ButtonHack>
     </FormAuth>

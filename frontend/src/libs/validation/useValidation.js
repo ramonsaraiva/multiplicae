@@ -8,9 +8,14 @@ function useValidation(validation, callback, ...values) {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   function handleChange({ target }) {
-    const { name, value } = target;
+    const { name, value, type, checked } = target;
 
-    setValue(oldValue => ({ ...oldValue, [name]: value }));
+    setValue(oldValue => {
+      const newValue =
+        type === 'checkbox' ? { [name]: checked } : { [name]: value };
+      console.log(Object.assign({ ...oldValue }, newValue));
+      return Object.assign({ ...oldValue }, newValue);
+    });
   }
 
   function handleSubmit(event) {

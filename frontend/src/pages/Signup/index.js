@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MainOpen from '../../containers/MainOpen';
-import FormSignup from '../../containers/FormSinup';
+import FormSignup from '../../containers/FormSignup';
 
 function Signup() {
   return (
