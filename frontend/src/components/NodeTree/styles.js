@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+export const Area = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+`
+export const Title = styled.path`
+  color: var(--color-complementary-blue-light);
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 10px;
+`
+
 export const Content = styled.svg`
   width:108px;
   height:108px;

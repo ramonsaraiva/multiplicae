@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const Area = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+`
+
 export const Content = styled.svg`
   width:108px;
   height:108px;
@@ -30,8 +37,15 @@ export const Center = styled.circle`
   r:20px;
   fill:var(--color-complementary-blue-light);
 `
+
 export const Icon = styled.path`
   fill-rule:evenodd; 
   clip-rule: evenodd;
   fill: #D8D7DF;
+`
+export const Title = styled.path`
+  color: var(--color-complementary-blue-light);
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
 `
