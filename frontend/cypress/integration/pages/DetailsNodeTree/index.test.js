@@ -25,4 +25,12 @@ describe('DetailsNodeTree page', function() {
 
     cy.get('ol').get('img[src*=thumbnail]');
   });
+
+  it('Verify if have the InfoHack', function() {
+    cy.visit('/details/node-tree');
+
+    cy.get('p')
+      .get('a')
+      .get('img[src*=info]');
+  });
 });

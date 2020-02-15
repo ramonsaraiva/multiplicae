@@ -4,6 +4,7 @@ import TitleHack from '../../components/TitleHack';
 import HeaderHack from '../../containers/HeaderHack';
 import TextHack from '../../components/TextHack';
 import SlidersHack from '../../components/SlidersHack';
+import InfoHack from '../../components/InfoHack';
 
 function DetailsNodeTree() {
   const videos = [1, 2, 3];
@@ -20,6 +21,8 @@ function DetailsNodeTree() {
       </TextHack>
 
       <SlidersHack videos={videos} />
+
+      <InfoHack>Histórico de Rendimento</InfoHack>
     </>
   );
 }
