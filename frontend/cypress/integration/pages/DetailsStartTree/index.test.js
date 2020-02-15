@@ -8,8 +8,8 @@ describe('Page DetailsStartTree', function() {
   it('Verify if have the HeaderHack and into it have the components: LogoHack and IconMenu', function() {
     cy.visit('details/start-tree');
 
-    cy.contains('Logo');
     cy.get('header').get('img[src*=menu]');
+    cy.get('header').contains('Logo');
   });
 
   it('Verify if have the components: TitleHack and TextHack', function() {
