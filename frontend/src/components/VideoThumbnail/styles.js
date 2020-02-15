@@ -33,7 +33,6 @@ export const Figure = styled.figure`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90%;
 
   &:before {
     content: '';
@@ -42,6 +41,6 @@ export const Figure = styled.figure`
     height: 100%;
     background-color: var(--color-primary-blue-dark);
     opacity: 0.3;
-    border-radius: inherit;
+    border-radius: var(--radius-medium);
   }
 `;

@@ -3,9 +3,11 @@ import React from 'react';
 import HeaderHack from '../../containers/HeaderHack';
 import TitleHack from '../../components/TitleHack';
 import TextHack from '../../components/TextHack';
-import VideoThumbnail from '../../components/VideoThumbnail';
+import SlidersHack from '../../components/SlidersHack';
 
 function DetailsStartTree() {
+  const videos = [1, 2, 3, 4];
+
   return (
     <>
       <HeaderHack />
@@ -16,7 +18,7 @@ function DetailsStartTree() {
         but scamper so i am the best hit you unexpectedly.
       </TextHack>
 
-      <VideoThumbnail />
+      <SlidersHack videos={videos} />
     </>
   );
 }

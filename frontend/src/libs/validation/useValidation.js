@@ -20,7 +20,6 @@ function useValidation(validation, callback, ...values) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('ae');
 
     setErrors(validation(value));
     setIsSubmitting(true);
