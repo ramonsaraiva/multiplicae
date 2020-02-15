@@ -37,7 +37,7 @@ export const Icon = styled.path`
   fill-rule: evenodd;
   clip-rule: evenodd;
   fill: ${props =>
-    props.progress > 0
+    props.progress > 0 && props.dashed
       ? 'var(--color-complementary-' + props.color + ')'
       : 'var(--color-secondary)'};
   d: ${props =>

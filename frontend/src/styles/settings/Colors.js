@@ -14,9 +14,9 @@ const Colors = createGlobalStyle`
     --color-complementary-yellow: #FEBC42;
 
     --color-complementary-blue-light: #0396FF;
-    --color-complementary-vine-light: #8F2D56;
-    --color-complementary-red-light: #CF002F;
-    --color-complementary-yellow-light: #FEBC42;
+    --color-complementary-vine-light: #C8437B;
+    --color-complementary-red-light: #F11A4B;
+    --color-complementary-yellow-light: #FFCD72;
 
     --color-border: rgba(15, 76, 129, 0.3);
     --color-separation: rgba(1, 107, 167, 0.3);s

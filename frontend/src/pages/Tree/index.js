@@ -23,7 +23,6 @@ function Tree() {
         </CardHack>
       </ContentHeader>
 
-      <TitleHack>Índices</TitleHack>
       <TreeArea />
     </>
   );

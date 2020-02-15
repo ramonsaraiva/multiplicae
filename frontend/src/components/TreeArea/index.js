@@ -1,7 +1,6 @@
 import React from 'react';
 import Dot from '../../components/Dot';
-
-import { Content } from './styles';
+import { PrimaryArea, SecondaryArea } from './styles';
 
 function TreeArea(props) {
   var data = {
@@ -18,7 +17,27 @@ function TreeArea(props) {
   };
   return (
     <>
-      <Dot progress={47} color="yellow" />
+      <PrimaryArea>
+        <Dot progress={100} color="blue" />
+      </PrimaryArea>
+      <SecondaryArea>
+        <Dot progress={10} color="blue" dashed />
+        <Dot progress={20} color="blue" dashed />
+      </SecondaryArea>
+      <PrimaryArea>
+        <Dot progress={100} color="red" />
+      </PrimaryArea>
+      <SecondaryArea>
+        <Dot progress={10} color="red" dashed />
+        <Dot progress={20} color="red" dashed />
+      </SecondaryArea>
+      <PrimaryArea>
+        <Dot progress={100} color="yellow" />
+      </PrimaryArea>
+      <SecondaryArea>
+        <Dot progress={10} color="yellow" dashed />
+        <Dot progress={20} color="yellow" dashed />
+      </SecondaryArea>
     </>
   );
 }
