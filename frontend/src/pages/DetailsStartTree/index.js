@@ -1,6 +1,7 @@
 import React from 'react';
 
 import HeaderHack from '../../containers/HeaderHack';
+import MainDetails from '../../containers/MainDetails';
 import TitleHack from '../../components/TitleHack';
 import TextHack from '../../components/TextHack';
 import SlidersHack from '../../components/SlidersHack';
@@ -10,8 +11,9 @@ function DetailsStartTree() {
   const videos = [1, 2, 3, 4];
 
   return (
-    <>
+    <MainDetails>
       <HeaderHack />
+
       <TitleHack>O que são</TitleHack>
       <TextHack>
         Somehow manage to catch a bird but have no idea what to do next, so play
@@ -27,7 +29,7 @@ function DetailsStartTree() {
       <ActionArrow>CDB</ActionArrow>
       <ActionArrow>CDI</ActionArrow>
       <ActionArrow>IPCA</ActionArrow>
-    </>
+    </MainDetails>
   );
 }
 

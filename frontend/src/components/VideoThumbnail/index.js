@@ -1,16 +1,16 @@
 import React from 'react';
 
-import { Figure, Thumbnail, Time, Play } from './styles';
+import { Thumbnail, Image, Time, Play } from './styles';
 
 import thumbnail from '../../img/thumbnail.png';
 
 function VideoThumbnail() {
   return (
-    <Figure>
+    <Thumbnail>
       <Play />
-      <Thumbnail src={thumbnail} />
+      <Image src={thumbnail} />
       <Time>01:00</Time>
-    </Figure>
+    </Thumbnail>
   );
 }
 

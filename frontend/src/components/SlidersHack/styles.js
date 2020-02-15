@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { Figure } from '../VideoThumbnail/styles';
+import { Thumbnail } from '../VideoThumbnail/styles';
 
 export const Item = styled.li`
   display: flex;
@@ -12,21 +12,21 @@ export const Item = styled.li`
   ${({ position }) =>
     position === 'right' &&
     css`
-      transform: translateX(-10%);
+      transform: translateX(calc(var(--gap-big) * -1.5));
     `};
 
   ${({ position }) =>
     position === 'left' &&
     css`
-      transform: translateX(10%);
+      transform: translateX(calc(var(--gap-big) * 1.5));
     `}
 
-  & > ${Figure} {
-    width: 85%;
+  & > ${Thumbnail} {
+    width: calc(100% - var(--gap-big) * 2);
   }
 `;
 
-export const Sliders = styled.ol`
+export const Content = styled.ol`
   display: flex;
   flex-wrap: nowrap;
   width: ${({ qtdVideos }) => qtdVideos * 100}%;
@@ -38,7 +38,7 @@ export const Sliders = styled.ol`
   `};
 `;
 
-export const Wrapper = styled.div`
+export const Sliders = styled.div`
   width: 100%;
   overflow: hidden;
 `;

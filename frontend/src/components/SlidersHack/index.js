@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Wrapper, Sliders, Item } from './styles';
+import { Sliders, Content, Item } from './styles';
 import VideoThumbnail from '../VideoThumbnail';
 
 function SlidersHack({ videos }) {
@@ -18,8 +18,8 @@ function SlidersHack({ videos }) {
   }
 
   return (
-    <Wrapper>
-      <Sliders qtdVideos={videos.length} idActive={idActive}>
+    <Sliders>
+      <Content qtdVideos={videos.length} idActive={idActive}>
         {videos.map(({ thumbnail }, key) => (
           <Item
             position={changePosition(key)}
@@ -30,8 +30,8 @@ function SlidersHack({ videos }) {
             <VideoThumbnail thumbnail={thumbnail} />
           </Item>
         ))}
-      </Sliders>
-    </Wrapper>
+      </Content>
+    </Sliders>
   );
 }
 

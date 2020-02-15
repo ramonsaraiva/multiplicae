@@ -9,7 +9,7 @@ export const Play = styled.img.attrs({ src: play })`
   transition: transform 100ms linear;
 `;
 
-export const Thumbnail = styled.img`
+export const Image = styled.img`
   border-radius: var(--radius-medium);
   width: 100%;
 `;
@@ -24,7 +24,7 @@ export const Time = styled.time`
   border-radius: var(--radius-small);
 `;
 
-export const Figure = styled.figure`
+export const Thumbnail = styled.figure`
   position: relative;
   display: flex;
   justify-content: center;
