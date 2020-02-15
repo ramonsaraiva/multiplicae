@@ -4,7 +4,7 @@ import { Sliders, Content, Item } from './styles';
 import VideoThumbnail from '../VideoThumbnail';
 
 function SlidersHack({ videos }) {
-  const [idActive, setIdActive] = useState(1);
+  const [idActive, setIdActive] = useState(0);
 
   function handleClick({ target }) {
     const id = parseInt(target.closest('li').getAttribute('data-id'));
