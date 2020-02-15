@@ -6,6 +6,7 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Tree from './pages/Tree';
 import DetailsStartTree from './pages/DetailsStartTree';
+import DetailsNodeTree from './pages/DetailsNodeTree';
 
 const Router = () => (
   <Routes>
@@ -15,6 +16,7 @@ const Router = () => (
       <Route path="/auth/login" component={Login} />
       <Route path="/tree" component={Tree} />
       <Route path="/details/start-tree" component={DetailsStartTree} />
+      <Route path="/details/node-tree" component={DetailsNodeTree} />
     </Switch>
   </Routes>
 );
