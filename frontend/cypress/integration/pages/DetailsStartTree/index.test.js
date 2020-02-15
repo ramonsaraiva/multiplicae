@@ -36,4 +36,19 @@ describe('Page DetailsStartTree', function() {
       .get('li')
       .get('img[src*=thumbnail]');
   });
+
+  it('Verify if have the TitleHack with the content: Tipo de indicadores', function() {
+    cy.visit('/details/start-tree');
+
+    cy.get('h2').contains('Tipos de indicadores');
+  });
+
+  it('Verify if have three ActionArrow', function() {
+    cy.visit('/details/start-tree');
+
+    cy.get('ol')
+      .get('a')
+      .should('have.css', 'background')
+      .and('match', /arrow/);
+  });
 });

@@ -15,6 +15,7 @@ const Colors = createGlobalStyle`
     --color-complementary-yellow: #FEBC42;
 
     --color-border: rgba(15, 76, 129, 0.3);
+    --color-separation: rgba(1, 107, 167, 0.3);s
   }
 `;
 

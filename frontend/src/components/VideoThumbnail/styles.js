@@ -7,10 +7,6 @@ export const Play = styled.img.attrs({ src: play })`
   width: 15px;
   cursor: pointer;
   transition: transform 100ms linear;
-
-  &:hover {
-    transform: scale(1.3);
-  }
 `;
 
 export const Thumbnail = styled.img`
@@ -42,5 +38,9 @@ export const Figure = styled.figure`
     background-color: var(--color-primary-blue-dark);
     opacity: 0.3;
     border-radius: var(--radius-medium);
+  }
+
+  &:hover > ${Play} {
+    transform: scale(1.3);
   }
 `;
