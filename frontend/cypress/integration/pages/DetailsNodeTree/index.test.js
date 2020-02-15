@@ -33,4 +33,11 @@ describe('DetailsNodeTree page', function() {
       .get('a')
       .get('img[src*=info]');
   });
+
+  it('Verify if have the InfoContent', function() {
+    cy.visit('/details/node-tree');
+
+    cy.get('p').get('img[src*=money]');
+    cy.get('p').get('strong');
+  });
 });
