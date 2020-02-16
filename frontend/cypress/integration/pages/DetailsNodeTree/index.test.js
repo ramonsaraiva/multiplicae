@@ -52,4 +52,10 @@ describe('DetailsNodeTree page', function() {
 
     cy.get('p').contains('poupança');
   });
+
+  it('Verify if have InfoHack container', function() {
+    cy.visit('/details/node-tree');
+
+    cy.get('dl');
+  });
 });
