@@ -4,7 +4,7 @@ import TitleHack from '../../components/TitleHack';
 import HeaderHack from '../../containers/HeaderHack';
 import TextHack from '../../components/TextHack';
 import SlidersHack from '../../components/SlidersHack';
-import InfoHack from '../../components/InfoHack';
+import InfoTitle from '../../components/InfoTitle';
 import InfoContent from '../../components/InfoContent';
 import InfoLabel from '../../components/InfoLabel';
 
@@ -24,14 +24,14 @@ function DetailsNodeTree() {
 
       <SlidersHack videos={videos} />
 
-      <InfoHack>Histórico de Rendimento</InfoHack>
+      <InfoTitle>Histórico de Rendimento</InfoTitle>
       <InfoContent icon="moneyBall" contentStrong="10,5%" content="a.a." />
       <InfoLabel>5% acima da poupança</InfoLabel>
 
-      <InfoHack>Segurança</InfoHack>
+      <InfoTitle>Segurança</InfoTitle>
       <InfoContent icon="shield" contentStrong="Médio Risco" content="a.a." />
 
-      <InfoHack>Tempo de Resgate</InfoHack>
+      <InfoTitle>Tempo de Resgate</InfoTitle>
       <InfoContent
         icon="sandClock"
         contentStrong="2 dias úteis"

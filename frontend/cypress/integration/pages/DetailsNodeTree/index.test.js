@@ -20,13 +20,13 @@ describe('DetailsNodeTree page', function() {
     );
   });
 
-  it('Verify if have the SlidersHack', function() {
+  it('Verify if have the SlidersHack component', function() {
     cy.visit('/details/node-tree');
 
     cy.get('ol').get('img[src*=thumbnail]');
   });
 
-  it('Verify if have the InfoHack', function() {
+  it('Verify if have the InfoTitle component', function() {
     cy.visit('/details/node-tree');
 
     cy.get('p')
@@ -37,7 +37,7 @@ describe('DetailsNodeTree page', function() {
     cy.get('p').contains('Tempo de Resgate');
   });
 
-  it('Verify if have the InfoContent', function() {
+  it('Verify if have the InfoContent component', function() {
     cy.visit('/details/node-tree');
 
     cy.get('p').get('strong');
@@ -47,7 +47,7 @@ describe('DetailsNodeTree page', function() {
     cy.get('p').get('img[src*=clock]');
   });
 
-  it('Verify if have InfoLabel', function() {
+  it('Verify if have InfoLabel component', function() {
     cy.visit('/details/node-tree');
 
     cy.get('p').contains('poupança');

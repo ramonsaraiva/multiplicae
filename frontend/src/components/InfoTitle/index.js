@@ -4,7 +4,7 @@ import { Info, Action, Icon } from './styles';
 
 import info from '../../icons/info.svg';
 
-function InfoHack({ children }) {
+function InfoTitle({ children }) {
   return (
     <Info>
       {children}
@@ -15,4 +15,4 @@ function InfoHack({ children }) {
   );
 }
 
-export default InfoHack;
+export default InfoTitle;
