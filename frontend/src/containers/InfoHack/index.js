@@ -15,14 +15,15 @@ function InfoHack({
 }) {
   function showInfoLabel() {
     if (contentInfoLabel) {
-      return <InfoLabel>{contentInfoLabel}</InfoLabel>;
+      return <InfoLabel as="dd">{contentInfoLabel}</InfoLabel>;
     }
   }
 
   return (
     <Info>
-      <InfoTitle>{title}</InfoTitle>
+      <InfoTitle as="dt">{title}</InfoTitle>
       <InfoContent
+        as="dd"
         icon={icon}
         contentStrong={contentStrong}
         content={content}

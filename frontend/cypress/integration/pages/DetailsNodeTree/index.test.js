@@ -8,8 +8,8 @@ describe('DetailsNodeTree page', function() {
   it('Verify if have the HeaderHack and into it have the components: LogoHack and IconMenu', function() {
     cy.visit('/details/node-tree');
 
-    cy.get('header').get('img[src*=menu]');
     cy.get('header').contains('Logo');
+    cy.get('header').get('img[src*=menu]');
   });
 
   it('Verify if have the Texthack with the content: Somehow ...', function() {
@@ -26,36 +26,33 @@ describe('DetailsNodeTree page', function() {
     cy.get('ol').get('img[src*=thumbnail]');
   });
 
-  it('Verify if have the InfoTitle component', function() {
-    cy.visit('/details/node-tree');
-
-    cy.get('p')
-      .get('a')
-      .get('img[src*=info]');
-    cy.get('p').contains('Histórico de Rendimento');
-    cy.get('p').contains('Segurança');
-    cy.get('p').contains('Tempo de Resgate');
-  });
-
-  it('Verify if have the InfoContent component', function() {
-    cy.visit('/details/node-tree');
-
-    cy.get('p').get('strong');
-
-    cy.get('p').get('img[src*=money]');
-    cy.get('p').get('img[src*=shield]');
-    cy.get('p').get('img[src*=clock]');
-  });
-
-  it('Verify if have InfoLabel component', function() {
-    cy.visit('/details/node-tree');
-
-    cy.get('p').contains('poupança');
-  });
-
   it('Verify if have InfoHack container', function() {
     cy.visit('/details/node-tree');
 
-    cy.get('dl');
+    cy.get('dl').get('dt');
+    cy.get('dl')
+      .get('dd')
+      .get('img[src*=money]');
+    cy.get('dl')
+      .get('dd')
+      .contains('poupança');
+  });
+
+  it('Verify if have a InfoHack with the title: Histórico de Rendimento', function() {
+    cy.visit('/details/node-tree');
+
+    cy.get('dt').contains('Histórico de Rendimento');
+  });
+
+  it('Verify if have a InfoHack with the title: Segurança', function() {
+    cy.visit('/details/node-tree');
+
+    cy.get('dt').contains('Segurança');
+  });
+
+  it('Verify if hava a InfoHack with the title: Tempo de Resgate', function() {
+    cy.visit('/details/node-tree');
+
+    cy.get('dt').contains('Tempo de Resgate');
   });
 });

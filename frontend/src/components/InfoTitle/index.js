@@ -4,9 +4,9 @@ import { Info, Action, Icon } from './styles';
 
 import info from '../../icons/info.svg';
 
-function InfoTitle({ children }) {
+function InfoTitle({ as, children }) {
   return (
-    <Info>
+    <Info as={as}>
       {children}
       <Action>
         <Icon src={info} />

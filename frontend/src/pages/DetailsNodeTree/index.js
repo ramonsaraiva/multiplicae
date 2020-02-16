@@ -32,11 +32,15 @@ function DetailsNodeTree() {
         contentInfoLabel="5% acima da poupança"
       />
 
-      <InfoTitle>Segurança</InfoTitle>
-      <InfoContent icon="shield" contentStrong="Médio Risco" content="a.a." />
+      <InfoHack
+        title="Segurança"
+        icon="shield"
+        contentStrong="Médio Risco"
+        content="a.a."
+      />
 
-      <InfoTitle>Tempo de Resgate</InfoTitle>
-      <InfoContent
+      <InfoHack
+        title="Tempo de Resgate"
         icon="sandClock"
         contentStrong="2 dias úteis"
         content="a.a."
