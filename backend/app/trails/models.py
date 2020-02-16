@@ -7,6 +7,7 @@ from django.contrib.postgres.fields import JSONField
 from django.db import models
 
 from app.analytics.models import UserNodeProgress
+from app.investments.models import Investment
 
 
 class TrailQuerySet(models.QuerySet):
@@ -81,6 +82,16 @@ class NodeContent(models.Model):
     node = models.ForeignKey(Node, on_delete=models.CASCADE)
     content_type = models.CharField(max_length=32)
     content = JSONField(default=dict, blank=True)
+    investments = models.ManyToManyField(
+        Investment, through='NodeInvestment', related_name='contents')
 
     def __str__(self) -> str:
         return f'{self.node} - {self.content_type}'
+
+
+class NodeInvestment(models.Model):
+    node_content = models.ForeignKey(NodeContent, on_delete=models.CASCADE)
+    investment = models.ForeignKey(Investment, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = ('node_content', 'investment')

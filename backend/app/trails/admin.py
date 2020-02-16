@@ -5,6 +5,7 @@ from django.contrib import admin
 from .models import (
     Node,
     NodeContent,
+    NodeInvestment,
     Trail,
 )
 
@@ -19,6 +20,10 @@ class NodeAdmin(DraggableMPTTAdmin):
     mptt_ident_field = 'name'
 
 
+class NodeInvestmentInline(admin.TabularInline):
+    model = NodeInvestment
+
+
 @admin.register(NodeContent)
 class NodeContentAdmin(admin.ModelAdmin):
-    pass
+    inlines = (NodeInvestmentInline,)
