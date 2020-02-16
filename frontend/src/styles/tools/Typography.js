@@ -32,7 +32,7 @@ export const _smallText = css`
 `;
 
 export const _caption = css`
-  font-size: 11px;
-  line-height: 1em;
+  font-size: 14px;
+  line-height: 16px;
   font-weight: ${weight.bold};
 `;
