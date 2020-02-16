@@ -6,6 +6,7 @@ import InfoHack from '../../containers/InfoHack';
 import TextHack from '../../components/TextHack';
 import SlidersHack from '../../components/SlidersHack';
 import ButtonHack from '../../components/ButtonHack';
+import FooterHack from '../../containers/FooterHack/index';
 
 function DetailsNodeTree() {
   const videos = [1, 2, 3];
@@ -46,6 +47,8 @@ function DetailsNodeTree() {
       />
 
       <ButtonHack>Complete o desafio</ButtonHack>
+
+      <FooterHack />
     </>
   );
 }

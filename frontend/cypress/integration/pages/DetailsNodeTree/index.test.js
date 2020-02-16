@@ -61,4 +61,10 @@ describe('DetailsNodeTree page', function() {
 
     cy.get('a').contains('Complete o desafio');
   });
+
+  it('Verify if have the FooterHack with the content: Multiplicaê.com', function() {
+    cy.visit('/details/node-tree');
+
+    cy.get('footer').contains('multiplicae.com');
+  });
 });
