@@ -22,6 +22,7 @@ export const _button = css`
   font-size: 16px;
   line-height: 19px;
   font-weight: ${weight.bold};
+  text-transform: uppercase;
 `;
 
 export const _smallText = css`
