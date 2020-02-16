@@ -2,11 +2,10 @@ import React from 'react';
 
 import TitleHack from '../../components/TitleHack';
 import HeaderHack from '../../containers/HeaderHack';
+import InfoHack from '../../containers/InfoHack';
 import TextHack from '../../components/TextHack';
 import SlidersHack from '../../components/SlidersHack';
-import InfoTitle from '../../components/InfoTitle';
-import InfoContent from '../../components/InfoContent';
-import InfoHack from '../../containers/InfoHack';
+import ButtonHack from '../../components/ButtonHack';
 
 function DetailsNodeTree() {
   const videos = [1, 2, 3];
@@ -45,6 +44,8 @@ function DetailsNodeTree() {
         contentStrong="2 dias úteis"
         content="a.a."
       />
+
+      <ButtonHack>Complete o desafio</ButtonHack>
     </>
   );
 }

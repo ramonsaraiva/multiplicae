@@ -50,9 +50,15 @@ describe('DetailsNodeTree page', function() {
     cy.get('dt').contains('Segurança');
   });
 
-  it('Verify if hava a InfoHack with the title: Tempo de Resgate', function() {
+  it('Verify if have a InfoHack with the title: Tempo de Resgate', function() {
     cy.visit('/details/node-tree');
 
     cy.get('dt').contains('Tempo de Resgate');
+  });
+
+  it('Verify if have the ButtonHack with o content: Complete o desafio', function() {
+    cy.visit('/details/node-tree');
+
+    cy.get('a').contains('Complete o desafio');
   });
 });
