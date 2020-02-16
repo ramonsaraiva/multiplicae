@@ -24,7 +24,17 @@ function DetailsNodeTree() {
       <SlidersHack videos={videos} />
 
       <InfoHack>Histórico de Rendimento</InfoHack>
-      <InfoContent contentStrong="10,5%" content="a.a." />
+      <InfoContent icon="moneyBall" contentStrong="10,5%" content="a.a." />
+
+      <InfoHack>Segurança</InfoHack>
+      <InfoContent icon="shield" contentStrong="Médio Risco" content="a.a." />
+
+      <InfoHack>Tempo de Resgate</InfoHack>
+      <InfoContent
+        icon="sandClock"
+        contentStrong="2 dias úteis"
+        content="a.a."
+      />
     </>
   );
 }

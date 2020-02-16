@@ -32,12 +32,18 @@ describe('DetailsNodeTree page', function() {
     cy.get('p')
       .get('a')
       .get('img[src*=info]');
+    cy.get('p').contains('Histórico de Rendimento');
+    cy.get('p').contains('Segurança');
+    cy.get('p').contains('Tempo de Resgate');
   });
 
   it('Verify if have the InfoContent', function() {
     cy.visit('/details/node-tree');
 
-    cy.get('p').get('img[src*=money]');
     cy.get('p').get('strong');
+
+    cy.get('p').get('img[src*=money]');
+    cy.get('p').get('img[src*=shield]');
+    cy.get('p').get('img[src*=clock]');
   });
 });
