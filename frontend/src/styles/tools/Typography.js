@@ -24,6 +24,12 @@ export const _button = css`
   font-weight: ${weight.bold};
 `;
 
+export const _smallText = css`
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: ${weight.regular};
+`;
+
 export const _caption = css`
   font-size: 11px;
   line-height: 1em;

@@ -46,4 +46,10 @@ describe('DetailsNodeTree page', function() {
     cy.get('p').get('img[src*=shield]');
     cy.get('p').get('img[src*=clock]');
   });
+
+  it('Verify if have InfoLabel', function() {
+    cy.visit('/details/node-tree');
+
+    cy.get('p').contains('poupança');
+  });
 });

@@ -12,6 +12,7 @@ const Colors = createGlobalStyle`
     --color-complementary-vine: #8F2D56;
     --color-complementary-red: #CF002F;
     --color-complementary-yellow: #FEBC42;
+    --color-complementary-green: #35A700;
 
     --color-complementary-blue-light: #0396FF;
     --color-complementary-vine-light: #C8437B;

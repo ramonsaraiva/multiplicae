@@ -6,6 +6,7 @@ import TextHack from '../../components/TextHack';
 import SlidersHack from '../../components/SlidersHack';
 import InfoHack from '../../components/InfoHack';
 import InfoContent from '../../components/InfoContent';
+import InfoLabel from '../../components/InfoLabel';
 
 function DetailsNodeTree() {
   const videos = [1, 2, 3];
@@ -25,6 +26,7 @@ function DetailsNodeTree() {
 
       <InfoHack>Histórico de Rendimento</InfoHack>
       <InfoContent icon="moneyBall" contentStrong="10,5%" content="a.a." />
+      <InfoLabel>5% acima da poupança</InfoLabel>
 
       <InfoHack>Segurança</InfoHack>
       <InfoContent icon="shield" contentStrong="Médio Risco" content="a.a." />
