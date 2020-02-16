@@ -63,4 +63,4 @@ class Investment(models.Model):
             return f'{self.profitability}%'
         if self.is_pos:
             return f'{self.profitability}% {self.get_index_display()}'
-        return f'{self.index} + {self.profitability}%'
+        return f'{self.get_index_display()} + {self.profitability}%'
