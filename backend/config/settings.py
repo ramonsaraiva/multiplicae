@@ -162,7 +162,6 @@ DRAMATIQ_BROKER = {
         'dramatiq.middleware.TimeLimit',
         'dramatiq.middleware.Callbacks',
         'dramatiq.middleware.Retries',
-        'django_dramatiq.middleware.AdminMiddleware',
         'django_dramatiq.middleware.DbConnectionsMiddleware',
     ]
 }
