@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 
-export const Container = styled.svg`
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+`;
+export const Circle = styled.svg`
   width: 110px;
   height: 110px;
   border-radius: 50%;
+  margin-bottom: 10px;
 
   & > circle {
     cx: 55px;

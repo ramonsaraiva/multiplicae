@@ -1,43 +1,79 @@
 import React from 'react';
-import Dot from '../../components/Dot';
+import DotHack from '../DotHack';
 import { PrimaryArea, SecondaryArea } from './styles';
 
 function TreeArea(props) {
-  var data = {
-    conteudo: {
-      nome: 'Índices',
-      progresso: 45,
+  var data = [
+    {
+      name: 'Índices',
+      progresso: 85,
+      cor: 'blue',
       tarefas: [
-        { name: 'Selic', status: true },
-        { name: 'CDI', status: false },
-        { name: 'CDB', status: true },
-        { name: 'IPCA', status: false }
+        { name: 'Selic', status: true, progresso: 85 },
+        { name: 'CDI', status: false, progresso: 85 },
+        { name: 'CDB', status: true, progresso: 85 },
+        { name: 'IPCA', status: false, progresso: 85 }
+      ]
+    },
+    {
+      name: 'Renda Fixa',
+      progresso: 85,
+      cor: 'blue',
+      tarefas: [
+        { name: 'Selic', status: true, progresso: 85 },
+        { name: 'CDI', status: false, progresso: 85 },
+        { name: 'CDB', status: true, progresso: 85 },
+        { name: 'IPCA', status: false, progresso: 85 }
+      ]
+    },
+    {
+      name: 'Índices',
+      progresso: 85,
+      cor: 'yellow',
+      tarefas: [
+        { name: 'Selic', status: true, progresso: 85 },
+        { name: 'CDI', status: false, progresso: 85 },
+        { name: 'CDB', status: true, progresso: 85 },
+        { name: 'IPCA', status: false, progresso: 85 }
+      ]
+    },
+    {
+      name: 'Renda Fixa',
+      progresso: 85,
+      cor: 'red',
+      tarefas: [
+        { name: 'Selic', status: true, progresso: 85 },
+        { name: 'CDI', status: false, progresso: 85 },
+        { name: 'CDB', status: true, progresso: 85 },
+        { name: 'IPCA', status: false, progresso: 85 }
       ]
     }
-  };
+  ];
   return (
     <>
-      <PrimaryArea>
-        <Dot progress={100} color="blue" />
-      </PrimaryArea>
-      <SecondaryArea>
-        <Dot progress={10} color="blue" dashed />
-        <Dot progress={20} color="blue" dashed />
-      </SecondaryArea>
-      <PrimaryArea>
-        <Dot progress={100} color="red" />
-      </PrimaryArea>
-      <SecondaryArea>
-        <Dot progress={10} color="red" dashed />
-        <Dot progress={20} color="red" dashed />
-      </SecondaryArea>
-      <PrimaryArea>
-        <Dot progress={100} color="yellow" />
-      </PrimaryArea>
-      <SecondaryArea>
-        <Dot progress={10} color="yellow" dashed />
-        <Dot progress={20} color="yellow" dashed />
-      </SecondaryArea>
+      {data.map(element => {
+        return (
+          <>
+            <PrimaryArea>
+              <DotHack
+                progress={element.progresso}
+                color={element.cor}
+                title={element.name}
+              />
+            </PrimaryArea>
+            <SecondaryArea>
+              {element.tarefas.map(e => (
+                <DotHack
+                  progress={e.progresso}
+                  color={element.cor}
+                  dashed
+                  title={e.name}
+                />
+              ))}
+            </SecondaryArea>
+          </>
+        );
+      })}
     </>
   );
 }
