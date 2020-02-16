@@ -6,6 +6,7 @@ from pathlib import Path
 
 
 BASE_DIR = Path.cwd()
+ASSETS_DIR = BASE_DIR / 'assets'
 
 env = environ.Env(
     DEBUG=(bool, False),
