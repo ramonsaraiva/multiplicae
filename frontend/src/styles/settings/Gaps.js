@@ -5,8 +5,8 @@ const Gaps = createGlobalStyle`
     --gap-smaller: 8px;
     --gap-half-smaller: calc(var(--gap-smaller) / 2);
     --gap-small: 12px;
+    --gap-medium: 16px;
     --gap-double-small: calc(var(--gap-small) * 2);
-    --gap-medium: 15px;
     --gap-big: 30px;
     --gap-bigger: 80px;
   }
