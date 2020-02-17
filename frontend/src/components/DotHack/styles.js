@@ -8,9 +8,12 @@ export const Container = styled.div`
   justify-content: center;
   margin: 20px;
 
-  & > ${Title} {
+  & > a > ${Title} {
     text-align: center;
-    color: var(--color-complementary-blue-light);
+    color: ${props => 'var(--color-complementary-' + props.color + '-light)'};
+  }
+  & > a {
+    text-decoration: none;
   }
 `;
 export const Circle = styled.svg`
