@@ -9,7 +9,7 @@ export const Input = styled.input`
   align-items: center;
   width: 100%;
   background-color: var(--color-secondary-light);
-  height: 56px;
+  height: var(--size-input);
   border-bottom: 2px solid;
   border-radius: var(--radius-small) var(--radius-small) 0 0;
   padding: 0 var(--gap-small);

@@ -20,7 +20,8 @@ const Colors = createGlobalStyle`
     --color-complementary-yellow-light: #FFCD72;
 
     --color-border: rgba(15, 76, 129, 0.3);
-    --color-separation: rgba(1, 107, 167, 0.3);s
+    --color-separation: rgba(1, 107, 167, 0.3);
+    --color-checkbox: #B0AFB8
   }
 `;
 

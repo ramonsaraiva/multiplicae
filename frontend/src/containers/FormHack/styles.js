@@ -25,9 +25,8 @@ export const Form = styled.form`
     text-align: left;
   }
 
-  & ${Input}:not([type=checkbox]) {
+  & ${Input} {
     display: block;
-    height: 40px;
     width: inherit;
   }
 

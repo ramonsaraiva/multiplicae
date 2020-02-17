@@ -37,7 +37,16 @@ function FormSurvey({ question }) {
         {
           contentLabel: 'Não possuo',
           name: 'notHave',
-          type: 'checkbox'
+          type: 'checkbox',
+          id: 'notHave',
+          forName: 'notHave'
+        },
+        {
+          contentLabel: 'Poupança',
+          name: 'savings',
+          type: 'checkbox',
+          id: 'savings',
+          forName: 'savings'
         }
       ]
     }
@@ -77,14 +86,20 @@ function FormSurvey({ question }) {
 
   function multipleCheckboxForm() {
     const { title, caption, fields } = questions[question];
-    const { contentLabel, name, type } = fields[0];
+    const { id, forName, contentLabel, name, type } = fields[0];
 
     return (
       <Form>
         <TitleHack>{title}</TitleHack>
         <CaptionHack>{caption}</CaptionHack>
 
-        <FieldHack name={name} contentLabel={contentLabel} type={type} />
+        <FieldHack
+          id={id}
+          forName={forName}
+          name={name}
+          contentLabel={contentLabel}
+          type={type}
+        />
       </Form>
     );
   }

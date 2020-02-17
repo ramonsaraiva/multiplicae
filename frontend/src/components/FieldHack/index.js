@@ -3,7 +3,7 @@ import React from 'react';
 import LabelHack from '../../components/LabelHack';
 import InputHack from '../../components/InputHack';
 
-import { Error } from './styles';
+import { Field, Error } from './styles';
 import CheckboxHack from '../CheckboxHack';
 
 function FieldHack({
@@ -13,22 +13,27 @@ function FieldHack({
   placeholder,
   type = 'text',
   msgError = '',
-  onChange
+  onChange,
+  forName = '',
+  id = ''
 }) {
   function showCheckbox() {
     return (
-      <LabelHack>
+      <Field>
         <CheckboxHack
+          id={id}
           name={name}
           placeholder={placeholder}
-          value={value}
           onChange={onChange}
+          value={value}
           type={type}
           error={msgError}
         />
-        {contentLabel}
-        <Error>{msgError}</Error>
-      </LabelHack>
+        <LabelHack type="checkbox" for={forName}>
+          {contentLabel}
+          <Error>{msgError}</Error>
+        </LabelHack>
+      </Field>
     );
   }
 
