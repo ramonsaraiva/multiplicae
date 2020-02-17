@@ -41,6 +41,10 @@ jobs:
       working-directory: ${{ env.working-directory }}
       run: flake8 --exclude migrations config app
 
+    - name: Add .env
+      working-directory: ${{ env.working-directory }}
+      run: cp .env.example .env
+
     - name: Test
       working-directory: ${{ env.working-directory }}
       run: python manage.py test app

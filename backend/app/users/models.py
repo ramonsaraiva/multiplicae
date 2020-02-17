@@ -1,7 +1,10 @@
+import uuid
+
 from django.contrib.auth.models import (
     AbstractUser,
     BaseUserManager,
 )
+from django.contrib.postgres.fields import JSONField
 from django.db import models
 
 
@@ -35,5 +38,13 @@ class User(AbstractUser):
 
     objects = UserManager()
 
-    def __str_s_(self):
+    def __str__(self):
         return self.email
+
+
+class UUIDKeyValue(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    data = JSONField(default=dict, blank=True)
+
+    def __str__(self) -> str:
+        return str(self.id)
