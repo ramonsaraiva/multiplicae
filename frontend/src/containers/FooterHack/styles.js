@@ -4,7 +4,7 @@ import { _caption } from '../../styles/tools/Typography';
 
 export const Text = styled.p`
   ${_caption};
-  color: var(--color-sencodary-lighter);
+  color: var(--color-secondary);
 `;
 
 export const Footer = styled.footer`

@@ -1,17 +1,30 @@
 import React from 'react';
 
-import MainOpen from '../../containers/MainOpen';
+import MainHome from '../../containers/MainHome';
+import HeaderHack from '../../containers/HeaderHack';
+import CardHack from '../../containers/CardHack';
+import FooterHack from '../../containers/FooterHack';
 import TitleHack from '../../components/TitleHack';
-import ButtonHack from '../../components/ButtonHack';
+import TextHack from '../../components/TextHack';
 
 function Home() {
   return (
-    <MainOpen>
-      <TitleHack>Boas vindas</TitleHack>
+    <MainHome>
+      <HeaderHack />
 
-      <ButtonHack to="/auth/signup">Comece agora</ButtonHack>
-      <ButtonHack to="/auth/login">Já tenho conta</ButtonHack>
-    </MainOpen>
+      <CardHack contentAction="Montar objetivo" hrefAction="/survey">
+        <TitleHack>Conquiste seus objetivos</TitleHack>
+
+        <TextHack>
+          Se você sonha grande, mas não sabe por onde começar a juntar dinheiro,
+          você está no lugar certo! E não, você não precisa ser um milionário
+          para investir! Faça o teste e tenha aulas feitas especialmente para o
+          seu perfil!
+        </TextHack>
+      </CardHack>
+
+      <FooterHack />
+    </MainHome>
   );
 }
 
