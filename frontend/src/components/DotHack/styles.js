@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
+import { Title } from '../TitleHack/styles';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 20px;
+
+  & > ${Title} {
+    text-align: center;
+    color: var(--color-complementary-blue-light);
+  }
 `;
 export const Circle = styled.svg`
   width: 110px;
