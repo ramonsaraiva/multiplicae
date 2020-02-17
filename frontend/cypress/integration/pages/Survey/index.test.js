@@ -90,4 +90,10 @@ describe('Survey page', function() {
     cy.url().should('include', '/survey/2');
     cy.get('input').clear();
   });
+
+  it('Open page 2', function() {
+    cy.visit('/survey/2');
+
+    cy.contains('Quanto você consegue juntar por mês?');
+  });
 });

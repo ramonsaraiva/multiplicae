@@ -19,4 +19,13 @@ function dreamMoney(values) {
   return errors;
 }
 
+function monthMoney(values) {
+  const { monthMoney } = values;
+  const errors = {};
+
+  errors.monthMoney = required(monthMoney);
+
+  return errors;
+}
+
 export default { dream, dreamMoney };
