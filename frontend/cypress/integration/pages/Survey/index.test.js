@@ -28,6 +28,21 @@ describe('Survey page', function() {
     );
   });
 
+  it('When the FieldHack with the name dream is empty', function() {
+    cy.visit('/survey/0');
+
+    cy.contains('Avançar').click();
+    cy.contains('Campo é obrigatório');
+  });
+
+  it('When the FieldHack with the name dream has less that 2 chars', function() {
+    cy.visit('/survey/0');
+
+    cy.get('input[name]').type('a');
+    cy.contains('Avançar').click();
+    cy.contains('Sonho com no mínimo 2 caracteres');
+  });
+
   it('When click on ButtonHack have that to going for /survey/1', function() {
     cy.visit('/survey/0');
 
