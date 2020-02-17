@@ -11,7 +11,7 @@ function FieldHack({
   value,
   placeholder,
   type = 'text',
-  msgError,
+  msgError = false,
   onChange
 }) {
   return (
@@ -23,6 +23,7 @@ function FieldHack({
         value={value}
         onChange={onChange}
         type={type}
+        error={!!msgError}
       />
       {type === 'checkbox' ? contentLabel : ''}
       <Error>{msgError}</Error>

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import { _caption } from '../../styles/tools/Typography';
+import { _smallText } from '../../styles/tools/Typography';
 
 export const Error = styled.span`
-  ${_caption};
-  display: block;
+  ${_smallText};
+  position: absolute;
   color: var(--color-complementary-red);
 `;

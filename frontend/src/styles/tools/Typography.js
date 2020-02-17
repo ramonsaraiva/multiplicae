@@ -18,6 +18,12 @@ export const _body1 = css`
   font-weight: ${weight.regular};
 `;
 
+export const _placeholder = css`
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: ${weight.regular};
+`;
+
 export const _button = css`
   font-size: 16px;
   line-height: 19px;
@@ -25,20 +31,14 @@ export const _button = css`
   text-transform: uppercase;
 `;
 
-export const _smallText = css`
-  font-size: 12px;
-  line-height: 14px;
-  font-weight: ${weight.regular};
-`;
-
-export const _placeholder = css`
-  font-size: 17px;
-  line-height: 20px;
-  font-weight: ${weight.regular};
-`;
-
 export const _caption = css`
   font-size: 14px;
   line-height: 16px;
   font-weight: ${weight.bold};
+`;
+
+export const _smallText = css`
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: ${weight.regular};
 `;

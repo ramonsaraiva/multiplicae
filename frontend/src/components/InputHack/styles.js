@@ -10,7 +10,18 @@ export const Input = styled.input`
   width: 100%;
   background-color: var(--color-secondary-light);
   height: 56px;
-  border-bottom: 2px solid var(--color-secondary);
+  border-bottom: 2px solid;
   border-radius: var(--radius-small) var(--radius-small) 0 0;
   padding: 0 var(--gap-small);
+
+  border-bottom-color: ${({ error }) =>
+    error ? 'var(--color-complementary-red-light)' : 'var(--color-secondary)'};
+
+  &:focus,
+  &:hover {
+    border-bottom-color: ${({ error }) =>
+      error
+        ? 'var(--color-complementary-red-light)'
+        : 'var(--color-complementary-blue)'};
+  }
 `;
