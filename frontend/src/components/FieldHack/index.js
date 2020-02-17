@@ -4,6 +4,7 @@ import LabelHack from '../../components/LabelHack';
 import InputHack from '../../components/InputHack';
 
 import { Error } from './styles';
+import CheckboxHack from '../CheckboxHack';
 
 function FieldHack({
   contentLabel,
@@ -14,21 +15,42 @@ function FieldHack({
   msgError = '',
   onChange
 }) {
-  return (
-    <LabelHack>
-      {type !== 'checkbox' ? contentLabel : ''}
-      <InputHack
-        name={name}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        type={type}
-        error={msgError}
-      />
-      {type === 'checkbox' ? contentLabel : ''}
-      <Error>{msgError}</Error>
-    </LabelHack>
-  );
+  function showCheckbox() {
+    return (
+      <LabelHack>
+        <CheckboxHack
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          type={type}
+          error={msgError}
+        />
+        {contentLabel}
+        <Error>{msgError}</Error>
+      </LabelHack>
+    );
+  }
+
+  function showSimpleInput() {
+    return (
+      <LabelHack>
+        {contentLabel}
+        <InputHack
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          type={type}
+          error={msgError}
+        />
+
+        <Error>{msgError}</Error>
+      </LabelHack>
+    );
+  }
+
+  return type === 'checkbox' ? showCheckbox() : showSimpleInput();
 }
 
 export default FieldHack;
