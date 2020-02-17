@@ -1,3 +1,5 @@
+import uuid
+
 from django.contrib.auth.models import (
     AbstractUser,
     BaseUserManager,
@@ -37,3 +39,12 @@ class User(AbstractUser):
 
     def __str_s_(self):
         return self.email
+
+
+class UUIDKeyValue(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    key = models.CharField(max_length=256)
+    value = models.CharField(max_length=256)
+
+    def __str__(self) -> str:
+        return f'{self.id} -> {self.key}'

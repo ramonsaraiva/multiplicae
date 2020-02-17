@@ -9,11 +9,17 @@ from app.trails.views import (
 from app.users.views import (
     UserViewSet,
     UUIDAPIView,
+    UUIDKeyValueViewSet,
 )
 
 
 v1_router = routers.DefaultRouter()
 v1_router.register('users', UserViewSet, basename='users')
+v1_router.register(
+    'users/key_value',
+    UUIDKeyValueViewSet,
+    basename='users_keyvalue',
+)
 
 v1_patterns = [
     path('trails/<slug:slug>/', TrailAPIView.as_view(), name='trails'),

@@ -9,7 +9,11 @@ from rest_framework.views import APIView
 
 from django.contrib.auth import get_user_model
 
-from .serializers import UserSerializer
+from .models import UUIDKeyValue
+from .serializers import (
+    UserSerializer,
+    UUIDKeyValueSerializer,
+)
 
 
 User = get_user_model()
@@ -33,3 +37,10 @@ class UUIDAPIView(APIView):
 
     def get(self, request, format=None):
         return Response({'uuid': str(uuid.uuid4())})
+
+
+class UUIDKeyValueViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+    authentication_classes = ()
+    permission_classes = ()
+    serializer_class = UUIDKeyValueSerializer
+    queryset = UUIDKeyValue.objects.all()
