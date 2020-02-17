@@ -8,11 +8,17 @@ function TreeArea(props) {
       name: 'Índices',
       progresso: 85,
       cor: 'blue',
+      to: '/details/start-tree',
       tarefas: [
-        { name: 'Selic', status: true, progresso: 85 },
-        { name: 'CDI', status: false, progresso: 85 },
-        { name: 'CDB', status: true, progresso: 85 },
-        { name: 'IPCA', status: false, progresso: 85 }
+        {
+          name: 'Selic',
+          status: true,
+          progresso: 85,
+          to: '/details/node-tree'
+        },
+        { name: 'CDI', status: false, progresso: 85, to: '/details/node-tree' },
+        { name: 'CDB', status: true, progresso: 85, to: '/details/node-tree' },
+        { name: 'IPCA', status: false, progresso: 85, to: '/details/node-tree' }
       ]
     },
     {
@@ -20,10 +26,9 @@ function TreeArea(props) {
       progresso: 85,
       cor: 'blue',
       tarefas: [
-        { name: 'Selic', status: true, progresso: 85 },
-        { name: 'CDI', status: false, progresso: 85 },
-        { name: 'CDB', status: true, progresso: 85 },
-        { name: 'IPCA', status: false, progresso: 85 }
+        { name: 'CDI', status: false, progresso: 85, to: '/details/node-tree' },
+        { name: 'CDB', status: true, progresso: 85, to: '/details/node-tree' },
+        { name: 'IPCA', status: false, progresso: 85, to: '/details/node-tree' }
       ]
     },
     {
@@ -31,10 +36,9 @@ function TreeArea(props) {
       progresso: 85,
       cor: 'yellow',
       tarefas: [
-        { name: 'Selic', status: true, progresso: 85 },
-        { name: 'CDI', status: false, progresso: 85 },
-        { name: 'CDB', status: true, progresso: 85 },
-        { name: 'IPCA', status: false, progresso: 85 }
+        { name: 'CDI', status: false, progresso: 85, to: '/details/node-tree' },
+        { name: 'CDB', status: true, progresso: 85, to: '/details/node-tree' },
+        { name: 'IPCA', status: false, progresso: 85, to: '/details/node-tree' }
       ]
     },
     {
@@ -42,10 +46,9 @@ function TreeArea(props) {
       progresso: 85,
       cor: 'red',
       tarefas: [
-        { name: 'Selic', status: true, progresso: 85 },
-        { name: 'CDI', status: false, progresso: 85 },
-        { name: 'CDB', status: true, progresso: 85 },
-        { name: 'IPCA', status: false, progresso: 85 }
+        { name: 'CDI', status: false, progresso: 85, to: '/details/node-tree' },
+        { name: 'CDB', status: true, progresso: 85, to: '/details/node-tree' },
+        { name: 'IPCA', status: false, progresso: 85, to: '/details/node-tree' }
       ]
     }
   ];
@@ -56,6 +59,7 @@ function TreeArea(props) {
           <>
             <PrimaryArea>
               <DotHack
+                to={element.to}
                 progress={element.progresso}
                 color={element.cor}
                 title={element.name}
@@ -64,6 +68,7 @@ function TreeArea(props) {
             <SecondaryArea>
               {element.tarefas.map(e => (
                 <DotHack
+                  to={e.to}
                   progress={e.progresso}
                   color={element.cor}
                   dashed
