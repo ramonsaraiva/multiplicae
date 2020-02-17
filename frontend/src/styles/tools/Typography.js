@@ -31,6 +31,12 @@ export const _smallText = css`
   font-weight: ${weight.regular};
 `;
 
+export const _placeholder = css`
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: ${weight.regular};
+`;
+
 export const _caption = css`
   font-size: 14px;
   line-height: 16px;
