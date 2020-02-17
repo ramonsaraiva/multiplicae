@@ -1,5 +1,5 @@
 describe('Survey page', function() {
-  it('Open page', function() {
+  it('Open page 0', function() {
     cy.visit('/survey/0');
 
     cy.contains('Qual é o seu maior sonho?');
@@ -52,5 +52,11 @@ describe('Survey page', function() {
       .contains('Avançar')
       .click();
     cy.url().should('include', '/survey/1');
+  });
+
+  it('Open page 1', function() {
+    cy.visit('/survey/1');
+
+    cy.contains('Qual o valor aproximado desse sonho?');
   });
 });
