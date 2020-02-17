@@ -37,7 +37,7 @@ class User(AbstractUser):
 
     objects = UserManager()
 
-    def __str_s_(self):
+    def __str__(self):
         return self.email
 
 
@@ -47,4 +47,4 @@ class UUIDKeyValue(models.Model):
     value = models.CharField(max_length=256)
 
     def __str__(self) -> str:
-        return f'{self.id} -> {self.key}'
+        return f'{self.id} - {self.key} -> {self.value}'

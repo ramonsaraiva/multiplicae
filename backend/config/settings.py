@@ -33,10 +33,10 @@ DJANGO_APPS = [
 
 INTERNAL_APPS = [
     'app.misc',
-    'app.users',
     'app.trails',
     'app.analytics',
     'app.investments',
+    'app.users',
 ]
 
 EXTERNAL_APPS = [

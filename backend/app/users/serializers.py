@@ -3,7 +3,7 @@ from rest_framework_jwt.settings import api_settings
 
 from django.contrib.auth import get_user_model
 
-from .models import UUIDKeyValue
+from app.users.models import UUIDKeyValue
 
 
 User = get_user_model()
