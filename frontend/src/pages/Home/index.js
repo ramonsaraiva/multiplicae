@@ -12,7 +12,7 @@ function Home() {
     <MainHome>
       <HeaderHack />
 
-      <CardHack contentAction="Montar objetivo" hrefAction="/survey">
+      <CardHack contentAction="Montar objetivo" hrefAction="/survey/0">
         <TitleHack>Conquiste seus objetivos</TitleHack>
 
         <TextHack>

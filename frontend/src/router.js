@@ -18,7 +18,7 @@ const Router = () => (
       <Route path="/tree" component={Tree} />
       <Route path="/details/start-tree" component={DetailsStartTree} />
       <Route path="/details/node-tree" component={DetailsNodeTree} />
-      <Route path="/survey" component={Survey} />
+      <Route path="/survey/:question" component={Survey} />
     </Switch>
   </Routes>
 );

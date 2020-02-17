@@ -6,4 +6,6 @@ export const Content = styled.div`
   display: flex;
   height: calc(100vh - var(--size-header));
   align-items: center;
+  position: relative;
+  overflow: hidden;
 `;

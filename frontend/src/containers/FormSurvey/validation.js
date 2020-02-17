@@ -5,8 +5,7 @@ function validation(values) {
   const errors = {};
 
   errors.dream =
-    required(dream, 'Sonho é obrigatória') ||
-    minLength(2, dream, 'Sonho com no mínimo 2 caracteres');
+    required(dream) || minLength(2, dream, 'Sonho com no mínimo 2 caracteres');
 
   return errors;
 }
