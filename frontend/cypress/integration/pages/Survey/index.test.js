@@ -109,4 +109,21 @@ describe('Survey page', function() {
     cy.contains('Avançar').click();
     cy.contains('Campo é obrigatório');
   });
+
+  it('When the FieldHack with the name monthMoney is filled with letters', function() {
+    cy.visit('/survey/2');
+
+    cy.get('input[name=monthMoney]').type('djshfha');
+    cy.contains('Avançar').click();
+    cy.contains('Somente números');
+  });
+
+  it('When click on ButtonHack have that to going for /survey/3', function() {
+    cy.visit('/survey/2');
+
+    cy.get('input[name=monthMoney]').type('1000,00');
+    cy.contains('Avançar').click();
+    cy.url().should('include', '/survey/3');
+    cy.get('input').clear();
+  });
 });

@@ -23,7 +23,7 @@ function monthMoney(values) {
   const { monthMoney } = values;
   const errors = {};
 
-  errors.monthMoney = required(monthMoney);
+  errors.monthMoney = required(monthMoney) || isNumber(monthMoney);
 
   return errors;
 }
