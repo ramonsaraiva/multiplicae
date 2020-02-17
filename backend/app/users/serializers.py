@@ -3,6 +3,8 @@ from rest_framework_jwt.settings import api_settings
 
 from django.contrib.auth import get_user_model
 
+from app.users.models import UUIDKeyValue
+
 
 User = get_user_model()
 
@@ -36,3 +38,15 @@ class UserSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+
+
+class UUIDKeyValueSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = UUIDKeyValue
+        fields = ('data',)
+
+    def update(self, instance, validated_data):
+        instance.data.update(validated_data['data'])
+        instance.save()
+        return instance
