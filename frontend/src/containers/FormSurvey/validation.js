@@ -28,4 +28,4 @@ function monthMoney(values) {
   return errors;
 }
 
-export default { dream, dreamMoney };
+export default { dream, dreamMoney, monthMoney };

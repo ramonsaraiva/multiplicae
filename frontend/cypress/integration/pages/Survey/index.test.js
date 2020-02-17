@@ -96,4 +96,17 @@ describe('Survey page', function() {
 
     cy.contains('Quanto você consegue juntar por mês?');
   });
+
+  it('Verify if have the component FieldHack with placeholder: Ex.: 100,00', function() {
+    cy.visit('/survey/2');
+
+    cy.get('input').should('have.attr', 'placeholder', 'Ex.: 100,00');
+  });
+
+  it('When the FieldHack with the name monthMoney is empty', function() {
+    cy.visit('/survey/2');
+
+    cy.contains('Avançar').click();
+    cy.contains('Campo é obrigatório');
+  });
 });
