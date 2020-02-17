@@ -9,6 +9,7 @@ function FieldHack({
   contentLabel,
   name,
   value,
+  placeholder,
   type = 'text',
   msgError,
   onChange
@@ -16,7 +17,13 @@ function FieldHack({
   return (
     <LabelHack>
       {type !== 'checkbox' ? contentLabel : ''}
-      <InputHack name={name} value={value} onChange={onChange} type={type} />
+      <InputHack
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        type={type}
+      />
       {type === 'checkbox' ? contentLabel : ''}
       <Error>{msgError}</Error>
     </LabelHack>
