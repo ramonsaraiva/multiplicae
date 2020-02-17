@@ -1,4 +1,4 @@
-import { required, minLength } from '../../libs/validation';
+import { required, minLength, isNumber } from '../../libs/validation';
 
 function dream(values) {
   const { dream } = values;
@@ -14,7 +14,7 @@ function dreamMoney(values) {
   const { dreamMoney } = values;
   const errors = {};
 
-  errors.dreamMoney = required(dreamMoney);
+  errors.dreamMoney = required(dreamMoney) || isNumber(dreamMoney);
 
   return errors;
 }

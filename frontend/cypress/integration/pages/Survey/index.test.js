@@ -73,4 +73,12 @@ describe('Survey page', function() {
     cy.contains('Avançar').click();
     cy.contains('Campo é obrigatório');
   });
+
+  it('Whe the FieldHack with the name monthMoney is filled with letters', function() {
+    cy.visit('/survey/1');
+
+    cy.get('input[name=dreamMoney]').type('djshfha');
+    cy.contains('Avançar').click();
+    cy.contains('Somente números');
+  });
 });
