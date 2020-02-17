@@ -1,20 +1,18 @@
 import React from 'react';
 
 import HeaderHack from '../../containers/HeaderHack';
-import TitleHack from '../../components/TitleHack';
-import FieldHack from '../../components/FieldHack';
+import FormSurvey from '../../containers/FormSurvey';
+
+import { Main, Content } from './styles';
 
 function Survey() {
   return (
-    <>
+    <Main>
       <HeaderHack />
-      <FieldHack
-        contentLabel="1. Qual é o seu maior sonho?"
-        name="dream"
-        type="text"
-        placeholder="Ex.: uma casa, uma bicicleta..."
-      />
-    </>
+      <Content>
+        <FormSurvey />
+      </Content>
+    </Main>
   );
 }
 

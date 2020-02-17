@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useHistory } from 'react-router-dom';
 
-import FormAuth from '../FormAuth';
+import FormHack from '../FormHack';
 import TitleHack from '../../components/TitleHack';
 import FieldHack from '../../components/FieldHack';
 import LabelHack from '../../components/LabelHack';
@@ -26,7 +26,7 @@ function FormLogin() {
   }
 
   return (
-    <FormAuth noValidate onSubmit={handleSubmit}>
+    <FormHack noValidate onSubmit={handleSubmit}>
       <TitleHack>Login</TitleHack>
 
       <FieldHack
@@ -52,7 +52,7 @@ function FormLogin() {
       </LabelHack>
 
       <ButtonHack as="button">Entrar</ButtonHack>
-    </FormAuth>
+    </FormHack>
   );
 }
 

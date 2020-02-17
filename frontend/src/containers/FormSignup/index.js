@@ -2,7 +2,7 @@ import React from 'react';
 
 import useValidation from '../../libs/validation/useValidation';
 import validation from './validation';
-import FormAuth from '../FormAuth';
+import FormHack from '../FormHack';
 import TitleHack from '../../components/TitleHack';
 import ButtonHack from '../../components/ButtonHack';
 import FieldHack from '../../components/FieldHack';
@@ -25,7 +25,7 @@ function FormSignup() {
   }
 
   return (
-    <FormAuth noValidate onSubmit={handleSubmit}>
+    <FormHack noValidate onSubmit={handleSubmit}>
       <TitleHack>Cadastro</TitleHack>
 
       <FieldHack
@@ -62,7 +62,7 @@ function FormSignup() {
       />
 
       <ButtonHack as="button">Enviar</ButtonHack>
-    </FormAuth>
+    </FormHack>
   );
 }
 

@@ -12,6 +12,12 @@ describe('Survey page', function() {
     cy.get('header').get('img[src*=menu]');
   });
 
+  it('Verify if have the component FormSurvey', function() {
+    cy.visit('/survey');
+
+    cy.get('form');
+  });
+
   it('Verify if have the component FieldHack with placeholder: Ex.: uma casa, uma bicicleta...', function() {
     cy.visit('/survey');
 

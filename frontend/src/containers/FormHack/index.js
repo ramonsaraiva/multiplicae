@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Form } from './styles';
 
-function FormAuth(props) {
+function FormHack(props) {
   return <Form {...props} />;
 }
 
-export default FormAuth;
+export default FormHack;
