@@ -1,6 +1,6 @@
 import { required, minLength } from '../../libs/validation';
 
-function validation(values) {
+function dream(values) {
   const { dream } = values;
   const errors = {};
 
@@ -10,4 +10,13 @@ function validation(values) {
   return errors;
 }
 
-export default validation;
+function dreamMoney(values) {
+  const { dreamMoney } = values;
+  const errors = {};
+
+  errors.dreamMoney = required(dreamMoney);
+
+  return errors;
+}
+
+export default { dream, dreamMoney };

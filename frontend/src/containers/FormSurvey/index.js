@@ -18,25 +18,24 @@ function FormSurvey({ question }) {
     },
     {
       contentLabel: '2. Qual o valor aproximado desse sonho?',
-      name: 'moneyDream',
+      name: 'dreamMoney',
       placeholder: 'Ex.: 4.000,00',
       type: 'number'
     },
     {
       contentLabel: '3. Quanto você consegue juntar por mês?',
-      name: 'moneyMoth',
+      name: 'monthMoney',
       placeholder: 'Ex.: 100,00',
       type: 'number'
     }
   ];
 
+  const { contentLabel, name, text, placeholder } = questions[question];
   const { value, handleChange, errors, handleSubmit } = useValidation(
-    validation,
+    validation[name],
     sendForm,
     'dream'
   );
-
-  const { contentLabel, name, text, placeholder } = questions[question];
 
   const history = useHistory();
 

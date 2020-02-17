@@ -52,11 +52,25 @@ describe('Survey page', function() {
       .contains('Avançar')
       .click();
     cy.url().should('include', '/survey/1');
+    cy.get('input').clear();
   });
 
   it('Open page 1', function() {
     cy.visit('/survey/1');
 
     cy.contains('Qual o valor aproximado desse sonho?');
+  });
+
+  it('Verify if have the component FieldHack with placeholder: Ex.: uma casa, um carro...', function() {
+    cy.visit('/survey/1');
+
+    cy.get('input').should('have.attr', 'placeholder', 'Ex.: 4.000,00');
+  });
+
+  it('When the FieldHack with the name dreamMoney is empty', function() {
+    cy.visit('/survey/1');
+
+    cy.contains('Avançar').click();
+    cy.contains('Campo é obrigatório');
   });
 });
