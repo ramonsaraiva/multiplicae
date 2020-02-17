@@ -39,8 +39,12 @@ class UUIDAPIView(APIView):
         return Response({'uuid': str(uuid.uuid4())})
 
 
-class UUIDKeyValueViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+class UUIDKeyValueViewSet(mixins.UpdateModelMixin, viewsets.GenericViewSet):
     authentication_classes = ()
     permission_classes = ()
     serializer_class = UUIDKeyValueSerializer
     queryset = UUIDKeyValue.objects.all()
+
+    def get_object(self):
+        instance, _ = UUIDKeyValue.objects.get_or_create(id=self.kwargs['pk'])
+        return instance

@@ -44,4 +44,9 @@ class UUIDKeyValueSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UUIDKeyValue
-        fields = ('id', 'key', 'value')
+        fields = ('data',)
+
+    def update(self, instance, validated_data):
+        instance.data.update(validated_data['data'])
+        instance.save()
+        return instance

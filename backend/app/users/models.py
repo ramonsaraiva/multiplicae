@@ -4,6 +4,7 @@ from django.contrib.auth.models import (
     AbstractUser,
     BaseUserManager,
 )
+from django.contrib.postgres.fields import JSONField
 from django.db import models
 
 
@@ -43,8 +44,7 @@ class User(AbstractUser):
 
 class UUIDKeyValue(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    key = models.CharField(max_length=256)
-    value = models.CharField(max_length=256)
+    data = JSONField(default=dict, blank=True)
 
     def __str__(self) -> str:
-        return f'{self.id} - {self.key} -> {self.value}'
+        return str(self.id)
