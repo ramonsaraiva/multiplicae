@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Form as FormHack } from '../FormHack/styles';
 import { Label } from '../../components/LabelHack/styles';
 import { Input } from '../../components/InputHack/styles';
+import { Title } from '../../components/TitleHack/styles';
 
 export const Form = styled(FormHack)`
   flex-direction: column;
@@ -10,6 +11,10 @@ export const Form = styled(FormHack)`
   width: calc(100vw * ${({ qtdQuestions }) => qtdQuestions});
   transform: calc(92vw * ${({ fieldActive }) => fieldActive});
   transition: 200ms transform linear;
+
+  & > ${Title} {
+    margin-bottom: var(--gap-small);
+  }
 
   & > ${Label} {
     width: calc(100vw - var(--gap-big) * 2);

@@ -5,6 +5,7 @@ import useValidation from '../../libs/validation/useValidation';
 import FieldHack from '../../components/FieldHack';
 import ButtonHack from '../../components/ButtonHack';
 import TitleHack from '../../components/TitleHack';
+import CaptionHack from '../../components/CaptionHack';
 
 import validation from './validation';
 import { Form } from './styles';
@@ -31,7 +32,14 @@ function FormSurvey({ question }) {
     },
     {
       title: '4. Você já possui algum dinheiro investido? Onde?',
-      fields: []
+      caption: 'Você pode marcar mais de uma opção.',
+      fields: [
+        {
+          contentLabel: 'Não possuo',
+          name: 'notHave',
+          type: 'checkbox'
+        }
+      ]
     }
   ];
 
@@ -51,7 +59,7 @@ function FormSurvey({ question }) {
 
   function simpleForm() {
     return (
-      <Form onSubmit={handleSubmit}>
+      <Form noValidate onSubmit={handleSubmit}>
         <FieldHack
           contentLabel={contentLabel}
           name={name}
@@ -68,9 +76,17 @@ function FormSurvey({ question }) {
   }
 
   function multipleCheckboxForm() {
-    const { title } = questions[question];
+    const { title, caption, fields } = questions[question];
+    const { contentLabel, name, type } = fields[0];
 
-    return <TitleHack>{title}</TitleHack>;
+    return (
+      <Form>
+        <TitleHack>{title}</TitleHack>
+        <CaptionHack>{caption}</CaptionHack>
+
+        <FieldHack name={name} contentLabel={contentLabel} type={type} />
+      </Form>
+    );
   }
 
   function whatForm() {

@@ -74,14 +74,6 @@ describe('Survey page', function() {
     cy.contains('Campo é obrigatório');
   });
 
-  it('When the FieldHack with the name monthMoney is filled with letters', function() {
-    cy.visit('/survey/1');
-
-    cy.get('input[name=dreamMoney]').type('djshfha');
-    cy.contains('Avançar').click();
-    cy.contains('Somente números');
-  });
-
   it('When click on ButtonHack have that to going for /survey/2', function() {
     cy.visit('/survey/1');
 
@@ -109,14 +101,6 @@ describe('Survey page', function() {
     cy.contains('Campo é obrigatório');
   });
 
-  it('When the FieldHack with the name monthMoney is filled with letters', function() {
-    cy.visit('/survey/2');
-
-    cy.get('input[name=monthMoney]').type('djshfha');
-    cy.contains('Avançar').click();
-    cy.contains('Somente números');
-  });
-
   it('When click on ButtonHack have that to going for /survey/3', function() {
     cy.visit('/survey/2');
 
@@ -129,5 +113,23 @@ describe('Survey page', function() {
     cy.visit('/survey/3');
 
     cy.contains('Você já possui algum dinheiro investido? Onde?');
+  });
+
+  it('Verify if have the TitleHack component with the content: Você já possui algum dinheiro investido? Onde?', function() {
+    cy.visit('/survey/3');
+
+    cy.get('h1').contains('Você já possui algum dinheiro investido? Onde?');
+  });
+
+  it('Verify if have the CaptionHack component with the content: Você pode marcar mais de uma opção.', function() {
+    cy.visit('/survey/3');
+
+    cy.get('p').contains('Você pode marcar mais de uma opção.');
+  });
+
+  it('Verify if have the FieldHack component with the content: Não possuo', function() {
+    cy.visit('/survey/3');
+
+    cy.get('label').contains('Não possuo');
   });
 });
