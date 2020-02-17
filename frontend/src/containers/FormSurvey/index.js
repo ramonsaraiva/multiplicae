@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import useValidation from '../../libs/validation/useValidation';
 import FieldHack from '../../components/FieldHack';
 import ButtonHack from '../../components/ButtonHack';
+import TitleHack from '../../components/TitleHack';
 
 import validation from './validation';
 import { Form } from './styles';
@@ -27,10 +28,15 @@ function FormSurvey({ question }) {
       name: 'monthMoney',
       placeholder: 'Ex.: 100,00',
       type: 'number'
+    },
+    {
+      title: '4. Você já possui algum dinheiro investido? Onde?',
+      fields: []
     }
   ];
 
-  const { contentLabel, name, text, placeholder } = questions[question];
+  const { contentLabel, name, type, placeholder } =
+    question < 3 && questions[question];
   const { value, handleChange, errors, handleSubmit } = useValidation(
     validation[name],
     sendForm,
@@ -40,24 +46,42 @@ function FormSurvey({ question }) {
   const history = useHistory();
 
   function sendForm() {
-    history.replace(`/survey/${parseInt(question) + 1}`);
+    history.push(`/survey/${parseInt(question) + 1}`);
   }
 
-  return (
-    <Form onSubmit={handleSubmit}>
-      <FieldHack
-        contentLabel={contentLabel}
-        name={name}
-        value={value[name]}
-        onChange={handleChange}
-        msgError={errors[name]}
-        type={text}
-        placeholder={placeholder}
-      />
+  function simpleForm() {
+    return (
+      <Form onSubmit={handleSubmit}>
+        <FieldHack
+          contentLabel={contentLabel}
+          name={name}
+          value={value[name]}
+          onChange={handleChange}
+          msgError={errors[name]}
+          type={type}
+          placeholder={placeholder}
+        />
 
-      <ButtonHack as="button">Avançar</ButtonHack>
-    </Form>
-  );
+        <ButtonHack as="button">Avançar</ButtonHack>
+      </Form>
+    );
+  }
+
+  function multipleCheckboxForm() {
+    const { title } = questions[question];
+
+    return <TitleHack>{title}</TitleHack>;
+  }
+
+  function whatForm() {
+    if (Array.isArray(questions[question].fields)) {
+      return multipleCheckboxForm();
+    } else {
+      return simpleForm();
+    }
+  }
+
+  return whatForm();
 }
 
 export default FormSurvey;

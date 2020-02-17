@@ -88,7 +88,6 @@ describe('Survey page', function() {
     cy.get('input[name=dreamMoney]').type('1000,00');
     cy.contains('Avançar').click();
     cy.url().should('include', '/survey/2');
-    cy.get('input').clear();
   });
 
   it('Open page 2', function() {
@@ -124,6 +123,11 @@ describe('Survey page', function() {
     cy.get('input[name=monthMoney]').type('1000,00');
     cy.contains('Avançar').click();
     cy.url().should('include', '/survey/3');
-    cy.get('input').clear();
+  });
+
+  it('Open page 3', function() {
+    cy.visit('/survey/3');
+
+    cy.contains('Você já possui algum dinheiro investido? Onde?');
   });
 });

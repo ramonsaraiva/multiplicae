@@ -8,10 +8,10 @@ import { Error } from './styles';
 function FieldHack({
   contentLabel,
   name,
-  value,
+  value = '',
   placeholder,
   type = 'text',
-  msgError = false,
+  msgError = '',
   onChange
 }) {
   return (
@@ -23,7 +23,7 @@ function FieldHack({
         value={value}
         onChange={onChange}
         type={type}
-        error={!!msgError}
+        error={msgError}
       />
       {type === 'checkbox' ? contentLabel : ''}
       <Error>{msgError}</Error>

@@ -13,7 +13,7 @@ function useValidation(validation, callback, ...values) {
     setValue(oldValue => {
       const newValue =
         type === 'checkbox' ? { [name]: checked } : { [name]: value };
-      console.log(Object.assign({ ...oldValue }, newValue));
+
       return Object.assign({ ...oldValue }, newValue);
     });
   }
@@ -36,7 +36,7 @@ function useValidation(validation, callback, ...values) {
 
   useEffect(sendFormIsValid, [errors]);
 
-  return { value, handleChange, handleSubmit, errors };
+  return { value, setValue, handleChange, handleSubmit, errors };
 }
 
 export default useValidation;
