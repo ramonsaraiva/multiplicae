@@ -8,6 +8,11 @@ export const Container = styled.div`
   justify-content: center;
   margin: 20px;
 
+  & a:hover > ${Title} {
+    text-shadow: 2px 2px 10px ${props => 'var(--color-complementary-' + props.color + '-light)'};
+    transition: 0.5s;
+  }
+
   & > a > ${Title} {
     text-align: center;
     color: ${props => 'var(--color-complementary-' + props.color + '-light)'};
