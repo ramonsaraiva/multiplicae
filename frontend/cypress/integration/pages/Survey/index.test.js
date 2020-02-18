@@ -218,4 +218,10 @@ describe('Survey page', function() {
       'Somehow manage to catch a bird but have no idea what to do next, so play with it until it dies of shock inspect anything brought into the house, but scamper so i am the best hit you unexpectedly.'
     );
   });
+
+  it('Verify if have the ButtonHack with the content: Começar jornada', function() {
+    cy.visit('/survey/5');
+
+    cy.get('a').contains('Começar jornada');
+  });
 });
