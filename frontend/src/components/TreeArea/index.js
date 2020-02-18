@@ -9,8 +9,8 @@ function TreeArea(props) {
         <DotHack
           to="/details/start-tree"
           progress={props.node.progress}
-          color="blue"
-          dashed={props.node.is_path}
+          color={props.node.color}
+          dashed={!props.node.is_path}
           title={props.node.abbreviation}
         />
         <SecondaryArea>
