@@ -5,8 +5,8 @@ export const Main = styled.main``;
 
 export const Content = styled.div`
   display: flex;
-  height: calc(100vh - var(--size-header));
   padding-top: var(--gap-bigger);
+  padding-bottom: var(--gap-big);
 
   @media (min-height: 720px) {
     align-items: center;
