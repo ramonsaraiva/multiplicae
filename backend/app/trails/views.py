@@ -25,6 +25,8 @@ class TrailAPIView(generics.RetrieveAPIView):
 class NodeContentAPIView(generics.RetrieveAPIView):
     model = NodeContent
     serializer_class = NodeContentSerializer
+    permission_classes = ()
+    authentication_classes = ()
 
     def get_object(self, queryset=None):
         try:
