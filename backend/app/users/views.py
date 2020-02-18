@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from django.contrib.auth import get_user_model
+from django.shortcuts import get_object_or_404
 
 from .models import UUIDKeyValue
 from .serializers import (
@@ -37,6 +38,15 @@ class UUIDAPIView(APIView):
 
     def get(self, request, format=None):
         return Response({'uuid': str(uuid.uuid4())})
+
+
+class UUIDLinkAPIView(APIView):
+
+    def put(self, request, *args, **kwargs):
+        key_value = get_object_or_404(UUIDKeyValue, id=kwargs['uuid'])
+        request.user.data.update(key_value.data)
+        request.user.save()
+        return Response({})
 
 
 class UUIDKeyValueViewSet(mixins.UpdateModelMixin, viewsets.GenericViewSet):
