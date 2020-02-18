@@ -14,14 +14,14 @@ import { Link } from 'react-router-dom';
 export default function DotHack(props) {
   return (
     <>
-      <Container {...props}>
+      <Container color={props.color}>
         <Link to={props.to}>
-          <Circle {...props}>
+          <Circle>
             <Border />
-            <Progress {...props} />
-            <Center {...props} />
-            <Icon {...props} />
-            <Dashed {...props} />
+            <Progress color={props.color} progress={props.progress} dashed={props.dashed} />
+            <Center color={props.color} dashed={props.dashed} />
+            <Icon  color={props.color} progress={props.progress} dashed={props.dashed} />
+            <Dashed dashed={props.dashed} />
           </Circle>
           <TitleHack>{props.title}</TitleHack>
         </Link>
