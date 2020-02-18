@@ -132,4 +132,34 @@ describe('Survey page', function() {
 
     cy.get('label').contains('Não possuo');
   });
+
+  it('Verify if have the FieldHack component with the content: Poupança', function() {
+    cy.visit('/survey/3');
+
+    cy.get('label').contains('Poupança');
+  });
+
+  it('Verify if have the FieldHack component with the content: Renda Fixa', function() {
+    cy.visit('/survey/3');
+
+    cy.get('label').contains('Renda Fixa');
+  });
+
+  it('Verify if have the FieldHack component with the content: Renda Variável', function() {
+    cy.visit('/survey/3');
+
+    cy.get('label').contains('Renda Variável');
+  });
+
+  it('Verify if have the FieldHack component with the content: Fundos de Investimento', function() {
+    cy.visit('/survey/3');
+
+    cy.get('label').contains('Fundos de Investimento');
+  });
+
+  it('Verify if have the FieldHack component with the content: Outros', function() {
+    cy.visit('/survey/3');
+
+    cy.get('label').contains('Outros');
+  });
 });

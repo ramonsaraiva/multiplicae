@@ -14,7 +14,7 @@ function FieldHack({
   type = 'text',
   msgError = '',
   onChange,
-  forName = '',
+  htmlFor = '',
   id = ''
 }) {
   function showCheckbox() {
@@ -29,7 +29,7 @@ function FieldHack({
           type={type}
           error={msgError}
         />
-        <LabelHack type="checkbox" for={forName}>
+        <LabelHack type="checkbox" htmlFor={htmlFor}>
           {contentLabel}
           <Error>{msgError}</Error>
         </LabelHack>

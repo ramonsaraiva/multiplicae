@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 import { _h1, _body1 } from '../../styles/tools/Typography';
-import { Checkbox } from '../../components/CheckboxHack/styles';
 
 const whenCheckbox = css`
   ${_body1};

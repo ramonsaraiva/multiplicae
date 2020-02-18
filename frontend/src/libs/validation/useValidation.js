@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function useValidation(validation, callback, ...values) {
+function useValidation(validation = false, callback, ...values) {
   const [value, setValue] = useState(
     Object.assign(...values.map(value => ({ [value]: '' })))
   );
@@ -21,7 +21,7 @@ function useValidation(validation, callback, ...values) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    setErrors(validation(value));
+    setErrors(validation(errors));
     setIsSubmitting(true);
   }
 

@@ -39,18 +39,48 @@ function FormSurvey({ question }) {
           name: 'notHave',
           type: 'checkbox',
           id: 'notHave',
-          forName: 'notHave'
+          htmlFor: 'notHave'
         },
         {
           contentLabel: 'Poupança',
           name: 'savings',
           type: 'checkbox',
           id: 'savings',
-          forName: 'savings'
+          htmlFor: 'savings'
+        },
+        {
+          contentLabel: 'Renda Fixa',
+          name: 'fixedIncome',
+          type: 'checkbox',
+          id: 'fixedIncome',
+          htmlFor: 'fixedIncome'
+        },
+        {
+          contentLabel: 'Renda Variável',
+          name: 'variableIncome',
+          type: 'checkbox',
+          id: 'variableIncome',
+          htmlFor: 'variableIncome'
+        },
+        {
+          contentLabel: 'Fundos de Investimento',
+          name: 'investmentFunds',
+          type: 'checkbox',
+          id: 'investmentFunds',
+          htmlFor: 'investmentFunds'
+        },
+        {
+          contentLabel: 'Outros',
+          name: 'other',
+          type: 'checkbox',
+          id: 'other',
+          htmlFor: 'other'
         }
       ]
     }
   ];
+
+  const history = useHistory();
 
   const { contentLabel, name, type, placeholder } =
     question < 3 && questions[question];
@@ -60,13 +90,11 @@ function FormSurvey({ question }) {
     'dream'
   );
 
-  const history = useHistory();
-
   function sendForm() {
     history.push(`/survey/${parseInt(question) + 1}`);
   }
 
-  function simpleForm() {
+  const simpleForm = () => {
     return (
       <Form noValidate onSubmit={handleSubmit}>
         <FieldHack
@@ -82,24 +110,27 @@ function FormSurvey({ question }) {
         <ButtonHack as="button">Avançar</ButtonHack>
       </Form>
     );
-  }
+  };
 
   function multipleCheckboxForm() {
     const { title, caption, fields } = questions[question];
-    const { id, forName, contentLabel, name, type } = fields[0];
 
     return (
-      <Form>
+      <Form noValidate onSubmit={handleSubmit}>
         <TitleHack>{title}</TitleHack>
         <CaptionHack>{caption}</CaptionHack>
+        {fields.map(({ id, htmlFor, contentLabel, name, type }) => (
+          <FieldHack
+            key={id}
+            id={id}
+            htmlFor={htmlFor}
+            name={name}
+            contentLabel={contentLabel}
+            type={type}
+          />
+        ))}
 
-        <FieldHack
-          id={id}
-          forName={forName}
-          name={name}
-          contentLabel={contentLabel}
-          type={type}
-        />
+        <ButtonHack as="button">Avançar</ButtonHack>
       </Form>
     );
   }
