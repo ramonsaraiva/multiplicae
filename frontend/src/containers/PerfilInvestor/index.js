@@ -17,7 +17,7 @@ function PerfilInvestor({ nextPage }) {
         but scamper so i am the best hit you unexpectedly.
       </TextHack>
 
-      <ButtonHack>Começar jornada</ButtonHack>
+      <ButtonHack to={nextPage}>Começar jornada</ButtonHack>
     </Perfil>
   );
 }
