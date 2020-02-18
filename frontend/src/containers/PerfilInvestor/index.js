@@ -4,6 +4,7 @@ import { Perfil, Icon } from './styles';
 import graph from '../../icons/graph.svg';
 import TitleHack from '../../components/TitleHack';
 import TextHack from '../../components/TextHack';
+import ButtonHack from '../../components/ButtonHack';
 
 function PerfilInvestor({ nextPage }) {
   return (
@@ -15,6 +16,8 @@ function PerfilInvestor({ nextPage }) {
         with it until it dies of shock inspect anything brought into the house,
         but scamper so i am the best hit you unexpectedly.
       </TextHack>
+
+      <ButtonHack>Começar jornada</ButtonHack>
     </Perfil>
   );
 }
