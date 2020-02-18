@@ -177,4 +177,18 @@ describe('Survey page', function() {
       'Tudo certo! Já conseguimos montar o melhor plano de apredizado para você!'
     );
   });
+
+  it('Verify if have a TitleHack with the content: Tudo certo! Já...', function() {
+    cy.visit('/survey/4');
+
+    cy.get('h1').contains(
+      'Tudo certo! Já conseguimos montar o melhor plano de apredizado para você!'
+    );
+  });
+
+  it('Verify if have a ButtonHack with o content: Ver perfil', function() {
+    cy.visit('/survey/4');
+
+    cy.get('a').contains('Ver perfil');
+  });
 });

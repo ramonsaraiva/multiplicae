@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Success } from './styles';
 import TitleHack from '../../components/TitleHack';
+import ButtonHack from '../../components/ButtonHack';
 
 function SuccessSurvey() {
   return (
@@ -10,6 +11,8 @@ function SuccessSurvey() {
         Tudo certo! Já conseguimos montar o melhor plano de apredizado para
         você!
       </TitleHack>
+
+      <ButtonHack>Ver perfil</ButtonHack>
     </Success>
   );
 }
