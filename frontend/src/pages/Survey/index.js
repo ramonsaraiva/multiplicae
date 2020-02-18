@@ -8,6 +8,7 @@ import FormDreamMoney from '../../containers/FormDreamMoney';
 import FormMonthMoney from '../../containers/FormMonthMoney';
 import FormDoYouInvest from '../../containers/FormDoYouInvest';
 import SuccessSurvey from '../../containers/SuccessSurvey';
+import PerfilInvestor from '../../containers/PerfilInvestor';
 
 function Survey() {
   const { question } = useParams();
@@ -18,7 +19,8 @@ function Survey() {
       <FormDreamMoney nextPage="/survey/2" />,
       <FormMonthMoney nextPage="/survey/3" />,
       <FormDoYouInvest nextPage="/survey/4" />,
-      <SuccessSurvey nextPage="/survey/5" />
+      <SuccessSurvey nextPage="/survey/5" />,
+      <PerfilInvestor nextPage="/tree" />
     ];
 
     return questions[question];

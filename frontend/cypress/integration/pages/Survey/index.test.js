@@ -198,4 +198,24 @@ describe('Survey page', function() {
     cy.contains('Ver perfil').click();
     cy.url().should('includes', '/survey/5');
   });
+
+  it('Open page 5', function() {
+    cy.visit('/survey/5');
+
+    cy.contains('Investidor nível: moderado.');
+  });
+
+  it('Verify if have the Icon that includes graph in src', function() {
+    cy.visit('/survey/5');
+
+    cy.get('img[src*=graph]');
+  });
+
+  it('Verify if have the TextHack with the content: Somehow manage to...', function() {
+    cy.visit('/survey/5');
+
+    cy.get('p').contains(
+      'Somehow manage to catch a bird but have no idea what to do next, so play with it until it dies of shock inspect anything brought into the house, but scamper so i am the best hit you unexpectedly.'
+    );
+  });
 });
