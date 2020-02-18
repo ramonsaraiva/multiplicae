@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Tree from './pages/Tree';
+import NodeResolver from './pages/NodeResolver';
 import DetailsStartTree from './pages/DetailsStartTree';
 import DetailsNodeTree from './pages/DetailsNodeTree';
 import Survey from './pages/Survey';
@@ -16,8 +17,7 @@ const Router = () => (
       <Route path="/auth/signup" component={Signup} />
       <Route path="/auth/login" component={Login} />
       <Route path="/tree" component={Tree} />
-      <Route path="/details/start-tree" component={DetailsStartTree} />
-      <Route path="/details/node-tree" component={DetailsNodeTree} />
+      <Route path="/node/:node_id" component={NodeResolver} />
       <Route path="/survey/:question" component={Survey} />
     </Switch>
   </Routes>

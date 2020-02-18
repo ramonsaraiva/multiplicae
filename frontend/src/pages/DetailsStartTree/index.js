@@ -7,8 +7,15 @@ import TextHack from '../../components/TextHack';
 import SlidersHack from '../../components/SlidersHack';
 import ActionArrow from '../../components/ActionArrow';
 
-function DetailsStartTree() {
+function DetailsStartTree(props) {
   const videos = [1, 2, 3, 4];
+
+  const data = {
+    abc: {
+      title: 'SELIC',
+      introduction: 'Uma introducaozinha'
+    }
+  }
 
   return (
     <MainDetails>

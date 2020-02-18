@@ -1,4 +1,5 @@
 import React from 'react';
+import {useParams} from 'react-router-dom';
 
 import InfoHack from '../../containers/InfoHack';
 import FooterHack from '../../containers/FooterHack';
@@ -15,12 +16,10 @@ function DetailsNodeTree() {
   return (
     <MainDetails>
       <HeaderHack />
-      <TitleHack>Lorem Ipsum</TitleHack>
+      <TitleHack>fjaskfhqwj</TitleHack>
 
       <TextHack>
-        Somehow manage to catch a bird but have no idea what to do next, so play
-        with it until it dies of shock inspect anything brought into the house,
-        but scamper so i am the best hit you unexpectedly.
+        asfhkjwqhf
       </TextHack>
 
       <SlidersHack videos={videos} />
@@ -46,8 +45,6 @@ function DetailsNodeTree() {
         contentStrong="2 dias úteis"
         content="a.a."
       />
-
-      <ButtonHack>Complete o desafio</ButtonHack>
 
       <FooterHack />
     </MainDetails>
