@@ -9,6 +9,7 @@ from app.trails.views import (
 from app.users.views import (
     UserViewSet,
     UUIDAPIView,
+    UUIDLinkAPIView,
     UUIDKeyValueViewSet,
 )
 
@@ -29,6 +30,11 @@ v1_patterns = [
         name='trails_node',
     ),
     path('users/uuid/', UUIDAPIView.as_view(), name='users_uuid'),
+    path(
+        'users/uuid/<uuid:uuid>/',
+        UUIDLinkAPIView.as_view(),
+        name='users_uuid_link',
+    ),
 ]
 
 v1_urls = v1_router.urls + v1_patterns
