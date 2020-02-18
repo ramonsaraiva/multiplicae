@@ -18,6 +18,7 @@ const Colors = createGlobalStyle`
     --color-complementary-vine-light: #C8437B;
     --color-complementary-red-light: #F11A4B;
     --color-complementary-yellow-light: #FFCD72;
+    --color-complementary-green-light: #44D102;
 
     --color-border: rgba(15, 76, 129, 0.3);
     --color-separation: rgba(1, 107, 167, 0.3);
