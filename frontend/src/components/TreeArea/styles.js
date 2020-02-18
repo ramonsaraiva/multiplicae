@@ -11,9 +11,6 @@ export const SecondaryArea = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-  width: 100%;
+  max-width: 100%;
   align-items: center;
-
-  @media (max-width: 768px) {
-  }
 `;

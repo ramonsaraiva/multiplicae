@@ -57,7 +57,18 @@ function Tree() {
               is_path: false,
               children: [],
               contents: ['http://api.multiplicae.com/api/v1/trails/default/14/']
-            },
+            }
+          ],
+          contents: []
+        },
+        {
+          id: 11,
+          name: 'Certificado de Depósito Interbancário',
+          abbreviation: 'CDI',
+          progress: 0,
+          is_abstract: false,
+          is_path: false,
+          children: [
             {
               id: 15,
               name: 'Tesouro Direto',
@@ -77,7 +88,18 @@ function Tree() {
               is_path: false,
               children: [],
               contents: ['http://api.multiplicae.com/api/v1/trails/default/16/']
-            },
+            }
+          ],
+          contents: ['http://api.multiplicae.com/api/v1/trails/default/11/']
+        },
+        {
+          id: 12,
+          name: 'Inflação',
+          abbreviation: 'IPCA',
+          progress: 0,
+          is_abstract: false,
+          is_path: false,
+          children: [
             {
               id: 17,
               name: 'Debêntures',
@@ -99,26 +121,6 @@ function Tree() {
               contents: ['http://api.multiplicae.com/api/v1/trails/default/18/']
             }
           ],
-          contents: []
-        },
-        {
-          id: 11,
-          name: 'Certificado de Depósito Interbancário',
-          abbreviation: 'CDI',
-          progress: 0,
-          is_abstract: false,
-          is_path: false,
-          children: [],
-          contents: ['http://api.multiplicae.com/api/v1/trails/default/11/']
-        },
-        {
-          id: 12,
-          name: 'Inflação',
-          abbreviation: 'IPCA',
-          progress: 0,
-          is_abstract: false,
-          is_path: false,
-          children: [],
           contents: ['http://api.multiplicae.com/api/v1/trails/default/12/']
         }
       ],
@@ -146,7 +148,6 @@ function Tree() {
           </TextHack>
         </CardHack>
       </ContentHeader>
-      <span>{data.hits}</span>
       <TreeArea node={response.root} />
     </>
   );
