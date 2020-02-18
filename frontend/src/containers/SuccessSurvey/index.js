@@ -4,7 +4,7 @@ import { Success } from './styles';
 import TitleHack from '../../components/TitleHack';
 import ButtonHack from '../../components/ButtonHack';
 
-function SuccessSurvey() {
+function SuccessSurvey({ nextPage }) {
   return (
     <Success>
       <TitleHack>
@@ -12,7 +12,7 @@ function SuccessSurvey() {
         você!
       </TitleHack>
 
-      <ButtonHack>Ver perfil</ButtonHack>
+      <ButtonHack to={nextPage}>Ver perfil</ButtonHack>
     </Success>
   );
 }

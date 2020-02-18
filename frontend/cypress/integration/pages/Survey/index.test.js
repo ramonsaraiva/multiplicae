@@ -191,4 +191,11 @@ describe('Survey page', function() {
 
     cy.get('a').contains('Ver perfil');
   });
+
+  it('When click on ButtonHack have that to going for /survey/4', function() {
+    cy.visit('/survey/4');
+
+    cy.contains('Ver perfil').click();
+    cy.url().should('includes', '/survey/5');
+  });
 });

@@ -18,7 +18,7 @@ function Survey() {
       <FormDreamMoney nextPage="/survey/2" />,
       <FormMonthMoney nextPage="/survey/3" />,
       <FormDoYouInvest nextPage="/survey/4" />,
-      <SuccessSurvey />
+      <SuccessSurvey nextPage="/survey/5" />
     ];
 
     return questions[question];

@@ -9,6 +9,7 @@ export const Success = styled.main`
   & > ${Title} {
     margin-bottom: var(--gap-medium);
   }
+
   & > ${Button} {
     height: 50px;
     width: 100%;
