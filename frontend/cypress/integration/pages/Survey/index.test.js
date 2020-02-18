@@ -162,4 +162,19 @@ describe('Survey page', function() {
 
     cy.get('label').contains('Outros');
   });
+
+  it('When click on ButtonHack have that to going for /survey/3', function() {
+    cy.visit('/survey/3');
+
+    cy.contains('Avançar').click();
+    cy.url().should('includes', '/survey/4');
+  });
+
+  it('Open page 4', function() {
+    cy.visit('/survey/4');
+
+    cy.contains(
+      'Tudo certo! Já conseguimos montar o melhor plano de apredizado para você!'
+    );
+  });
 });
