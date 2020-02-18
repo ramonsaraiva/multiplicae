@@ -7,7 +7,7 @@ export const Success = styled.main`
   text-align: center;
 
   & > ${Title} {
-    margin-bottom: var(--gap-medium);
+    margin-bottom: var(--gap-big);
   }
 
   & > ${Button} {
