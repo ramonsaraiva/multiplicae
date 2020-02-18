@@ -58,6 +58,3 @@ class UUIDKeyValueViewSet(mixins.UpdateModelMixin, viewsets.GenericViewSet):
     def get_object(self):
         instance, _ = UUIDKeyValue.objects.get_or_create(id=self.kwargs['pk'])
         return instance
-
-
- 
