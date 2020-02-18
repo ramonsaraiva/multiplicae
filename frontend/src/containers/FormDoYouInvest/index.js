@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from '../FormSurvey/styles';
+import FormSurvey from '../FormSurvey';
 import TitleHack from '../../components/TitleHack';
 import FieldHack from '../../components/FieldHack';
 import ButtonHack from '../../components/ButtonHack';
@@ -66,9 +66,10 @@ function FormDoYouInvest({ nextPage }) {
   }
 
   return (
-    <Form noValidate onSubmit={handleSubmit}>
+    <FormSurvey noValidate onSubmit={handleSubmit}>
       <TitleHack>{title}</TitleHack>
       <CaptionHack>{caption}</CaptionHack>
+
       {fields.map(({ id, htmlFor, contentLabel, name, type }) => (
         <FieldHack
           key={id}
@@ -81,7 +82,7 @@ function FormDoYouInvest({ nextPage }) {
       ))}
 
       <ButtonHack as="button">Avançar</ButtonHack>
-    </Form>
+    </FormSurvey>
   );
 }
 

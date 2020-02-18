@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Form } from '../FormSurvey/styles';
+import FormSurvey from '../FormSurvey';
 import useValidation from '../../libs/validation/useValidation';
 import validation from './validation';
 import FieldHack from '../../components/FieldHack';
@@ -28,7 +28,7 @@ function FormMonthMoney({ nextPage }) {
   }
 
   return (
-    <Form noValidate onSubmit={handleSubmit}>
+    <FormSurvey noValidate onSubmit={handleSubmit}>
       <FieldHack
         contentLabel={contentLabel}
         name={name}
@@ -40,7 +40,7 @@ function FormMonthMoney({ nextPage }) {
       />
 
       <ButtonHack as="button">Avançar</ButtonHack>
-    </Form>
+    </FormSurvey>
   );
 }
 

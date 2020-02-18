@@ -35,7 +35,7 @@ export const Form = styled.form`
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 50px;
+    min-height: 50px;
     margin-top: var(--gap-big);
   }
 `;

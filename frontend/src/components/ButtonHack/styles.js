@@ -8,6 +8,7 @@ export const Button = styled(Link)`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: var(--color-complementary-blue-light);
   color: var(--color-secondary-light);
   text-decoration: none;
