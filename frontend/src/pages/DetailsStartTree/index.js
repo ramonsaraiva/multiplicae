@@ -10,32 +10,21 @@ import ActionArrow from '../../components/ActionArrow';
 function DetailsStartTree(props) {
   const videos = [1, 2, 3, 4];
 
-  const data = {
-    abc: {
-      title: 'SELIC',
-      introduction: 'Uma introducaozinha'
-    }
-  }
+  const other_indexes = props.data.content.other_indexes.map(
+    (index) => <ActionArrow key={index.name} to='/node/11'>{index.name}</ActionArrow>);
 
   return (
     <MainDetails>
       <HeaderHack />
 
-      <TitleHack>O que são</TitleHack>
-      <TextHack>
-        Somehow manage to catch a bird but have no idea what to do next, so play
-        with it until it dies of shock inspect anything brought into the house,
-        but scamper so i am the best hit you unexpectedly.
-      </TextHack>
+      <TitleHack>{props.data.content.title}</TitleHack>
+      <TextHack>{props.data.content.description}</TextHack>
 
       <SlidersHack videos={videos} />
 
-      <TitleHack as="h2">Tipos de indicadores</TitleHack>
+      <TitleHack as="h2">Veja outros indicadores</TitleHack>
 
-      <ActionArrow>Selic</ActionArrow>
-      <ActionArrow>CDB</ActionArrow>
-      <ActionArrow>CDI</ActionArrow>
-      <ActionArrow>IPCA</ActionArrow>
+      {other_indexes}
     </MainDetails>
   );
 }

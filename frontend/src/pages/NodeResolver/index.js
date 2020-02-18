@@ -12,9 +12,12 @@ function NodeResolver() {
   const [id, setId] = useState(node_id);
   const [nodeData, setNodeData] = useState(node_id);
 
-  useEffect(async () => {
-    const content = await retrieve_node_content(id);
-    setNodeData(content);
+  useEffect(() => {
+    async function fetch() {
+      const content = await retrieve_node_content(id);
+      setNodeData(content);
+    }
+    fetch();
   }, [id]);
 
   function showNodeDetails(content_type) {
