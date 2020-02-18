@@ -10,6 +10,7 @@ export const Content = styled.div`
 
   & ${Button} {
     background-color: var(--color-primary-blue);
+    text-transform: none;
   }
 
   @media (min-height: 720px) {

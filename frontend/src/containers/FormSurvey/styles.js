@@ -6,6 +6,7 @@ import { Title } from '../../components/TitleHack/styles';
 import { Field } from '../../components/FieldHack/styles';
 import { Caption } from '../../components/CaptionHack/styles';
 import { Button } from '../../components/ButtonHack/styles';
+import arrowRight from '../../icons/arrow-right.svg';
 
 export const Form = styled(FormHack)`
   & > ${Title} {
@@ -24,7 +25,8 @@ export const Form = styled(FormHack)`
     margin-top: var(--gap-big);
   }
 
-  & > ${Button} {
-    flex-basis: 50px;
+  & ${Button}::after {
+    content: url(${arrowRight});
+    margin-left: var(--gap-medium);
   }
 `;
