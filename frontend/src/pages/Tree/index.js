@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import HeaderHack from '../../containers/HeaderHack';
 import ContentHeader from '../../containers/ContentHeader';
@@ -124,6 +125,13 @@ function Tree() {
       contents: []
     }
   };
+  const [data, setData] = useState({ hits: [] });
+  useEffect(async () => {
+    const result = await axios(
+      'http://api.multiplicae.com/api/v1/trails/default/'
+    );
+    setData(result.data);
+  });
   return (
     <>
       <HeaderHack />
@@ -138,7 +146,7 @@ function Tree() {
           </TextHack>
         </CardHack>
       </ContentHeader>
-
+      <span>{data.hits}</span>
       <TreeArea node={response.root} />
     </>
   );
