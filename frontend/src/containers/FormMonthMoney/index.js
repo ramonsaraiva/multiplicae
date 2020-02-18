@@ -6,11 +6,11 @@ import validation from './validation';
 import FieldHack from '../../components/FieldHack';
 import ButtonHack from '../../components/ButtonHack';
 
-function FormDreamMoney({ nextPage }) {
+function FormMonthMoney({ nextPage }) {
   const question = {
-    contentLabel: '2. Qual o valor aproximado desse sonho?',
-    name: 'dreamMoney',
-    placeholder: 'Ex.: 4.000,00',
+    contentLabel: '3. Quanto você consegue juntar por mês?',
+    name: 'monthMoney',
+    placeholder: 'Ex.: 100,00',
     type: 'number'
   };
   const { contentLabel, name, placeholder, type } = question;
@@ -18,7 +18,7 @@ function FormDreamMoney({ nextPage }) {
   const { value, handleChange, errors, handleSubmit } = useValidation(
     validation,
     sendForm,
-    'dreamMoney'
+    'monthMoney'
   );
 
   const history = useHistory();
@@ -32,9 +32,9 @@ function FormDreamMoney({ nextPage }) {
       <FieldHack
         contentLabel={contentLabel}
         name={name}
-        value={value.dreamMoney}
+        value={value.monthMoney}
         onChange={handleChange}
-        msgError={errors.dreamMoney}
+        msgError={errors.monthMoney}
         type={type}
         placeholder={placeholder}
       />
@@ -44,4 +44,4 @@ function FormDreamMoney({ nextPage }) {
   );
 }
 
-export default FormDreamMoney;
+export default FormMonthMoney;

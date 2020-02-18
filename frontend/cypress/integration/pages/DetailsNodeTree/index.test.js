@@ -65,6 +65,6 @@ describe('DetailsNodeTree page', function() {
   it('Verify if have the FooterHack with the content: Multiplicaê.com', function() {
     cy.visit('/details/node-tree');
 
-    cy.get('footer').contains('multiplicae.com');
+    cy.get('footer').contains('© 2020 Multiplicae. All rights reserved.');
   });
 });

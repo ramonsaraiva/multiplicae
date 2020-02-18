@@ -40,22 +40,4 @@ describe('Page Signup', function() {
     cy.contains('Senha:').click();
     cy.get('input[name=password]:focus');
   });
-
-  it('Click in LabelHack and the InputHack have is checked', function() {
-    cy.visit('/auth/signup');
-
-    cy.contains('Li e aceito os termos de uso').click();
-    cy.get('input[type=checkbox]:checked');
-  });
-
-  it('Click in ButtonHack and verify if open page Login', function() {
-    cy.visit('/auth/signup');
-
-    cy.get('input[name=name]').type('Bigodation');
-    cy.get('input[name=email]').type('marco.bruno.br@gmail.com');
-    cy.get('input[name=password]').type('12345678');
-    cy.get('input[name=termsOfUse]').click();
-    cy.contains('Enviar').click();
-    cy.contains('Invista nos seus sonhos');
-  });
 });

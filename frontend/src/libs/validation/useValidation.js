@@ -21,7 +21,7 @@ function useValidation(validation = false, callback, ...values) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    setErrors(validation(value));
+    setErrors(validation instanceof Object ? validation(value) : {});
     setIsSubmitting(true);
   }
 
