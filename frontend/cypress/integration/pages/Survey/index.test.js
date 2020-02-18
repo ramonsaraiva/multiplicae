@@ -224,4 +224,11 @@ describe('Survey page', function() {
 
     cy.get('a').contains('Começar jornada');
   });
+
+  it('When click on ButtonHack have that to going for /tree', function() {
+    cy.visit('/survey/5');
+
+    cy.contains('Começar jornada').click();
+    cy.url().should('includes', '/tree');
+  });
 });
