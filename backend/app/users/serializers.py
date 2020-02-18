@@ -15,10 +15,11 @@ jwt_encode_handler = api_settings.JWT_ENCODE_HANDLER
 class UserSerializer(serializers.ModelSerializer):
 
     token = serializers.SerializerMethodField()
+    name = serializers.CharField(max_length=128, write_only=True)
 
     class Meta:
         model = User
-        fields = ('email', 'password', 'token')
+        fields = ('email', 'name', 'password', 'token')
         read_only_fields = ('token', )
         extra_kwargs = {'password': {'write_only': True}}
 
@@ -36,6 +37,10 @@ class UserSerializer(serializers.ModelSerializer):
         """
         user = User(email=validated_data['email'])
         user.set_password(validated_data['password'])
+        full_name = validated_data.pop('name').split(' ')
+        user.first_name = full_name[0]
+        if len(full_name) > 1:
+            user.last_name = full_name[1]
         user.save()
         return user
 
