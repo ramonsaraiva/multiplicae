@@ -37,10 +37,10 @@ export const Progress = styled.circle`
   r: 50px;
   stroke-width: 9px;
   fill: none;
-  stroke: ${props => 'var(--color-complementary-' + props.color + '-light)'};
+  stroke: ${props =>props.progress>0 ?'var(--color-complementary-' + props.color + '-light)':'none'};
   stroke-dasharray: calc(310 * (${props => props.progress} / 100)) 310;
   transform: translateX(-1px) translateY(109px) rotateZ(271deg);
-  stroke-linecap: round;
+  stroke-linecap: ${props => (!props.dashed && 'round')};
 `;
 export const Center = styled.circle`
   r: ${props => (props.dashed ? '35px' : '20px')};
