@@ -44,6 +44,8 @@ class UUIDLinkAPIView(APIView):
 
     def put(self, request, *args, **kwargs):
         key_value = get_object_or_404(UUIDKeyValue, id=kwargs['uuid'])
+        request.user.data.update(key_value.data)
+        request.user.save()
         return Response({})
 
 
