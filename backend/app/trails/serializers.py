@@ -30,7 +30,7 @@ class ContentHyperlinkedRelatedField(serializers.HyperlinkedRelatedField):
 
 class NodeSerializer(serializers.ModelSerializer):
     progress = serializers.SerializerMethodField()
-    children = RecursiveField(many=True, required=False)
+    children = RecursiveField(source='get_children', many=True, required=False)
     contents = ContentHyperlinkedRelatedField(
         source='nodecontent_set', many=True, view_name='trails_node')
 

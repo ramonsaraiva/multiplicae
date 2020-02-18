@@ -65,6 +65,9 @@ class Node(MPTTModel):
 
     objects = NodeQuerySet.as_manager()
 
+    class MPTTMeta:
+        order_insertion_by = ['id']
+
     def __str__(self) -> str:
         return f'{self.name} - {self.abbreviation}'
 
