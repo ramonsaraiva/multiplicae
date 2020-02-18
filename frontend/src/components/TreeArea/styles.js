@@ -16,6 +16,11 @@ export const PrimaryArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  $::before {
+    content: '«';
+    color: blue;
+  }
 `;
 export const SecondaryArea = styled.div`
   display: flex;

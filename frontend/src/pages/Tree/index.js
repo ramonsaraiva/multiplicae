@@ -8,6 +8,122 @@ import TextHack from '../../components/TextHack';
 import TreeArea from '../../components/TreeArea';
 
 function Tree() {
+  var response = {
+    id: 2,
+    name: 'Invista nos seus sonhos',
+    root: {
+      id: 10,
+      name: 'Índices',
+      abbreviation: 'Índices',
+      progress: 9,
+      is_abstract: true,
+      is_path: true,
+      children: [
+        {
+          id: 13,
+          name: 'Renda Fixa',
+          abbreviation: 'Renda Fixa',
+          progress: 28,
+          is_abstract: true,
+          is_path: true,
+          children: [
+            {
+              id: 19,
+              name: 'Certificado de Recebíveis Imobiliários/do Agronegócio',
+              abbreviation: 'CRI e CRA',
+              progress: 100,
+              is_abstract: false,
+              is_path: false,
+              children: [],
+              contents: ['http://api.multiplicae.com/api/v1/trails/default/19/']
+            },
+            {
+              id: 20,
+              name: 'Letra de Câmbio',
+              abbreviation: 'LC',
+              progress: 100,
+              is_abstract: false,
+              is_path: false,
+              children: [],
+              contents: ['http://api.multiplicae.com/api/v1/trails/default/20/']
+            },
+            {
+              id: 14,
+              name: 'Poupança',
+              abbreviation: 'Poupança',
+              progress: 0,
+              is_abstract: false,
+              is_path: false,
+              children: [],
+              contents: ['http://api.multiplicae.com/api/v1/trails/default/14/']
+            },
+            {
+              id: 15,
+              name: 'Tesouro Direto',
+              abbreviation: 'TD',
+              progress: 0,
+              is_abstract: false,
+              is_path: false,
+              children: [],
+              contents: ['http://api.multiplicae.com/api/v1/trails/default/15/']
+            },
+            {
+              id: 16,
+              name: 'Certificado de depósito bancário',
+              abbreviation: 'CDB',
+              progress: 0,
+              is_abstract: false,
+              is_path: false,
+              children: [],
+              contents: ['http://api.multiplicae.com/api/v1/trails/default/16/']
+            },
+            {
+              id: 17,
+              name: 'Debêntures',
+              abbreviation: 'DEB',
+              progress: 0,
+              is_abstract: false,
+              is_path: false,
+              children: [],
+              contents: ['http://api.multiplicae.com/api/v1/trails/default/17/']
+            },
+            {
+              id: 18,
+              name: 'Letra de Crédito Imobiliário/do Agronegócio',
+              abbreviation: 'LCI e LCA',
+              progress: 0,
+              is_abstract: false,
+              is_path: false,
+              children: [],
+              contents: ['http://api.multiplicae.com/api/v1/trails/default/18/']
+            }
+          ],
+          contents: []
+        },
+        {
+          id: 11,
+          name: 'Certificado de Depósito Interbancário',
+          abbreviation: 'CDI',
+          progress: 0,
+          is_abstract: false,
+          is_path: false,
+          children: [],
+          contents: ['http://api.multiplicae.com/api/v1/trails/default/11/']
+        },
+        {
+          id: 12,
+          name: 'Inflação',
+          abbreviation: 'IPCA',
+          progress: 0,
+          is_abstract: false,
+          is_path: false,
+          children: [],
+          contents: ['http://api.multiplicae.com/api/v1/trails/default/12/']
+        }
+      ],
+      contents: []
+    }
+  };
   return (
     <>
       <HeaderHack />
@@ -23,7 +139,7 @@ function Tree() {
         </CardHack>
       </ContentHeader>
 
-      <TreeArea />
+      <TreeArea node={response.root} />
     </>
   );
 }
