@@ -1,6 +1,6 @@
 import request from 'superagent';
 
-const base_url = 'https://api.multiplicae.com/api/v1/trails'
+const base_url = 'https://api.multiplicae.com/api/v1/trails';
 
 async function retrieve_trail_content(trail_slug) {
   try {
@@ -11,4 +11,4 @@ async function retrieve_trail_content(trail_slug) {
   }
 }
 
-export default retrieve_trail_content
+export default retrieve_trail_content;

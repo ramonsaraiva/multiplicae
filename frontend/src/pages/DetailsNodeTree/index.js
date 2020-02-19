@@ -1,5 +1,4 @@
 import React from 'react';
-import {useParams} from 'react-router-dom';
 
 import InfoHack from '../../containers/InfoHack';
 import FooterHack from '../../containers/FooterHack';
@@ -8,7 +7,6 @@ import TitleHack from '../../components/TitleHack';
 import HeaderHack from '../../containers/HeaderHack';
 import TextHack from '../../components/TextHack';
 import SlidersHack from '../../components/SlidersHack';
-import ButtonHack from '../../components/ButtonHack';
 
 function DetailsNodeTree() {
   const videos = [1, 2, 3];
@@ -18,9 +16,7 @@ function DetailsNodeTree() {
       <HeaderHack />
       <TitleHack>fjaskfhqwj</TitleHack>
 
-      <TextHack>
-        asfhkjwqhf
-      </TextHack>
+      <TextHack>asfhkjwqhf</TextHack>
 
       <SlidersHack videos={videos} />
 

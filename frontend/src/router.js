@@ -6,8 +6,6 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Tree from './pages/Tree';
 import NodeResolver from './pages/NodeResolver';
-import DetailsStartTree from './pages/DetailsStartTree';
-import DetailsNodeTree from './pages/DetailsNodeTree';
 import Survey from './pages/Survey';
 
 const Router = () => (
