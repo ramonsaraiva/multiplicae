@@ -11,7 +11,7 @@ function DetailsStartTree(props) {
   const videos = [1, 2, 3, 4];
 
   const other_indexes = props.data.content.other_indexes.map(
-    (index) => <ActionArrow key={index.name} to='/node/11'>{index.name}</ActionArrow>);
+    (index) => <ActionArrow key={index.name} to={`/node/${index.id}`}>{index.name}</ActionArrow>);
 
   return (
     <MainDetails>

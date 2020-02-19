@@ -15,7 +15,7 @@ function TreeArea(props) {
         />
         <SecondaryArea>
           {props.node.children &&
-            props.node.children.map(e => <TreeArea node={e} />)}
+            props.node.children.map(e => <TreeArea node={e} key={e.id} />)}
         </SecondaryArea>
       </PrimaryArea>
     </>
