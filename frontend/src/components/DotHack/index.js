@@ -12,15 +12,25 @@ import TitleHack from '../TitleHack';
 import { Link } from 'react-router-dom';
 
 export default function DotHack(props) {
+  console.log('Progress', props.progress);
+
   return (
     <>
       <Container color={props.color}>
         <Link to={props.to}>
           <Circle>
             <Border />
-            <Progress color={props.color} progress={props.progress} dashed={props.dashed} />
+            <Progress
+              color={props.color}
+              progress={props.progress}
+              dashed={props.dashed}
+            />
             <Center color={props.color} dashed={props.dashed} />
-            <Icon  color={props.color} progress={props.progress} dashed={props.dashed} />
+            <Icon
+              color={props.color}
+              progress={props.progress}
+              dashed={props.dashed}
+            />
             <Dashed dashed={props.dashed} />
           </Circle>
           <TitleHack>{props.title}</TitleHack>

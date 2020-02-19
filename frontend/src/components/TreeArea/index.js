@@ -3,7 +3,20 @@ import DotHack from '../DotHack';
 import { PrimaryArea, SecondaryArea } from './styles';
 
 function TreeArea({ node }) {
-  const { id, progress, color, is_path, abbreviation, children } = node;
+  const {
+    id,
+    progress,
+    color = 'blue',
+    is_path,
+    abbreviation,
+    children
+  } = node;
+
+  function childrenTree() {
+    return children.map(element => (
+      <TreeArea node={element} key={element.id} />
+    ));
+  }
 
   return (
     <>
@@ -15,12 +28,7 @@ function TreeArea({ node }) {
           dashed={!is_path}
           title={abbreviation}
         />
-        <SecondaryArea>
-          {children &&
-            children.map(element => (
-              <TreeArea node={element} key={element.id} />
-            ))}
-        </SecondaryArea>
+        <SecondaryArea>{children && childrenTree()}</SecondaryArea>
       </PrimaryArea>
     </>
   );
