@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import retrieve_trail_content from '../../services/trail.service'
+import retrieve_trail_content from '../../services/trail.service';
 import HeaderHack from '../../containers/HeaderHack';
 import ContentHeader from '../../containers/ContentHeader';
 import CardHack from '../../containers/CardHack';
@@ -9,11 +9,13 @@ import TextHack from '../../components/TextHack';
 import TreeArea from '../../components/TreeArea';
 
 function Tree() {
-
   const [data, setData] = useState();
-  useEffect(async () => {
-    const content = await retrieve_trail_content('default');
-    setData(content);
+
+  useEffect(() => {
+    (async () => {
+      const content = await retrieve_trail_content('default');
+      setData(content);
+    })();
   }, []);
 
   return (
@@ -21,7 +23,7 @@ function Tree() {
       <HeaderHack />
 
       <ContentHeader>
-        <CardHack contentAction="Monte a sua jornada" hrefAction='/'>
+        <CardHack contentAction="Monte a sua jornada" hrefAction="/">
           <TitleHack>Invista nos seus sonhos</TitleHack>
 
           <TextHack>
@@ -30,7 +32,7 @@ function Tree() {
           </TextHack>
         </CardHack>
       </ContentHeader>
-      <TreeArea node={data.root} />
+      <TreeArea node={data ? data.root : {}} />
     </>
   );
 }
