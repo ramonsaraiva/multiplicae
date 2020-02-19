@@ -2,20 +2,24 @@ import React from 'react';
 import DotHack from '../DotHack';
 import { PrimaryArea, SecondaryArea } from './styles';
 
-function TreeArea(props) {
+function TreeArea({ node }) {
+  const { progress, color, is_path, abbreviation, children } = node;
+
   return (
     <>
       <PrimaryArea>
         <DotHack
           to="/details/start-tree"
-          progress={props.node.progress}
-          color={props.node.color}
-          dashed={!props.node.is_path}
-          title={props.node.abbreviation}
+          progress={progress}
+          color={color}
+          dashed={!is_path}
+          title={abbreviation}
         />
         <SecondaryArea>
-          {props.node.children &&
-            props.node.children.map(e => <TreeArea node={e} key={e.id} />)}
+          {children &&
+            children.map(element => (
+              <TreeArea node={element} key={element.id} />
+            ))}
         </SecondaryArea>
       </PrimaryArea>
     </>
