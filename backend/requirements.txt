@@ -3,7 +3,7 @@ django-environ==0.4.5
 djangorestframework==3.11.0
 djangorestframework-jwt==1.11.0
 django-mptt==0.11.0
-django-debug-toolbar==2.2
+django-debug-toolbar==2.2.1
 drf-yasg==1.17.0
 psycopg2==2.8.4
 django-redis==4.11.0
